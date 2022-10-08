@@ -615,7 +615,7 @@ def mapview(suburb):
     return render_template('v2.html', your_list=your_list)
  '''   
 if __name__ == '__main__':
-   app.run(debug = True)
+   #app.run(debug = True)
    def generate_html(dataframe: pd.DataFrame):
     # get the table HTML from the dataframe
     table_html = dataframe.to_html(table_id="table")
