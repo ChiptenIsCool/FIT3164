@@ -1,0 +1,366 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <title>Document</title>
+</head>
+
+
+<body class="homeBody">
+  <div class="pages">
+    <div class="topnav">
+      <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+      <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+      <a  onclick="gotoSuburb()">Information For Suburb</a>
+      <a  onclick="gotoSearching()">Preferences Searching</a>
+      <a  onclick="gotoHome()">Home</a>
+  </div>
+
+    
+    <div>
+
+      <form action="#" method="post">
+        <div> <img src="{{ url_for('static', filename='./images/home2.jpg')}}" class="center" /></div>
+        <div style="text-align:center ;"><h2 style="padding-top:10px ;">About Us</h2></div>
+        <div style="text-align:center  ; ">Our website helps new students choosing a Suburb based on the University they planned to study.
+        </div>
+        
+        <div style="text-align:center ;"><h2 style="padding-top:10px ;">Search a Suburb</h2></div>
+  
+        
+        <div style="text-align:center ;">
+            <input type="text" id="firstname" name="suburb" class="input">
+            <button type="submit" style="width: 78px;height: 34px;background-color: #D38C76;cursor: pointer;">Search</button>
+          </div>
+
+        <h5 style="text-align:center  ; padding-top:15px ;">Made by Group 14, Monash Computer Science students for a Data Science Project.
+        </h5>
+      </form>
+
+    </div>
+  </div>
+  <dialog class="dialog" id="dialogId">
+    <div class="text-feedback">Feedback For 'where to live' System</div>
+    <div class="canvas">
+      <canvas id="canvas1" class="canvas1" onclick="canvas1()"></canvas>
+      <canvas id="canvas2" class="canvas2" onclick="canvas2()"></canvas>
+      <canvas id="canvas3" class="canvas2" onclick="canvas3()"></canvas>
+      <canvas id="canvas4" class="canvas2" onclick="canvas4()"></canvas>
+      <canvas id="canvas5" class="canvas2" onclick="canvas5()"></canvas>
+    </div>
+    <div class="btnOne">
+      <div class="footer-btn"><button type="button" class="button1" onclick="Submit()">Submit</button></div>
+      <div class="footer-btn"><button type="button" class="button2" onclick="Cancel()">Cancel</button></div>
+    </div>
+    <div><button type="button" class="button3" onclick="Recommend()">Recommend to others</button></div>
+  </dialog>
+
+  <dialog class="dialog" id="dialogId2">
+    <div class="text-Recommend">Recommend to others</div>
+    <div class="btnTwo">
+      <div class="footer-btn"><button type="button" class="button21">Recommend With Link</button></div>
+      <div class="footer-btn"><button type="button" class="button22">Recommend With Feedback</button></div>
+      <div class="footer-btn"><button type="button" class="button23">Recommend With Email</button></div>
+    </div>
+    <div class="footer-btn"><button type="button" class="button4" onclick="CancelRecommend()">Cancel</button></div>
+  </dialog>
+
+
+</body>
+
+</html>
+
+
+
+
+
+<script>
+  let cavasOne = "#fff";
+  let canvasTwo = "#fff";
+  let cavasThree = "#fff";
+  let cavasFour = "#fff";
+  let cavasFive = "#fff";
+  
+  function CancelRecommend() {
+    var dialog = document.getElementById("dialogId2");
+    dialog.close()
+  }
+
+  function Recommend() {
+    var dialog = document.getElementById("dialogId");
+    dialog.close()
+    var dialog = document.getElementById("dialogId2");
+    dialog.show()
+  }
+
+  function FeedbackClick() {
+    var dialog = document.getElementById("dialogId");
+    dialog.show()
+
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+    var canvas = document.getElementById("canvas2");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+      
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+    var canvas = document.getElementById("canvas3");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+      
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+    var canvas = document.getElementById("canvas4");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+    var canvas = document.getElementById("canvas5");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+      
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    context.fillStyle = "#fff";
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+
+  }
+
+  function canvas1() {
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    if(cavasOne == "#fff"){
+      context.fillStyle = "#efa568";
+      cavasOne = "#efa568"
+    }else{
+      context.fillStyle = "#fff";
+      cavasOne = "#fff"
+    }
+    
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+  }
+  function canvas2() {
+    var canvas = document.getElementById("canvas2");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+       
+    context.lineWidth = "3";
+    if(canvasTwo == "#fff"){
+      context.fillStyle = "#efa568";
+      canvasTwo = "#efa568"
+    }else{
+      context.fillStyle = "#fff";
+      canvasTwo = "#fff"
+    }
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+  }
+  function canvas3() {
+    var canvas = document.getElementById("canvas3");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+      
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+      
+    context.lineWidth = "3";
+    if(cavasThree == "#fff"){
+      context.fillStyle = "#efa568";
+      cavasThree = "#efa568"
+    }else{
+      context.fillStyle = "#fff";
+      cavasThree = "#fff"
+    }
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+  }
+  function canvas4() {
+    var canvas = document.getElementById("canvas4");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+       
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+     
+    context.lineWidth = "3";
+    if(cavasFour == "#fff"){
+      context.fillStyle = "#efa568";
+      cavasFour = "#efa568"
+    }else{
+      context.fillStyle = "#fff";
+      cavasFour = "#fff"
+    }
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+  }
+  function canvas5() {
+    var canvas = document.getElementById("canvas5");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+      
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 20 + 20,
+        -Math.sin((18 + i * 72) / 180 * Math.PI) * 20 + 20);
+      context.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 8 + 20,
+        -Math.sin((54 + i * 72) / 180 * Math.PI) * 8 + 20);
+    }
+    context.closePath();
+   
+    context.lineWidth = "3";
+    if(cavasFive == "#fff"){
+      context.fillStyle = "#efa568";
+      cavasFive = "#efa568"
+    }else{
+      context.fillStyle = "#fff";
+      cavasFive = "#fff"
+    }
+    context.strokeStyle = "#efa568";
+    context.fill();
+    context.stroke();
+  }
+
+  function Submit() {
+    var dialog = document.getElementById("dialogId");
+    dialog.close()
+  }
+
+  function Cancel() {
+    var dialog = document.getElementById("dialogId");
+    dialog.close()
+  }
+function gotoSuburb() {
+    window.location.href = './search_all';
+}
+
+function gotoSearching() {
+    window.location.href = './filter';
+}
+
+function gotoHome() {
+    window.location.href = './search';
+}
+
+
+</script>

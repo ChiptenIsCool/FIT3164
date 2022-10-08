@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+
+<body class="suburbBody">
+    <div class="pages">
+        <div class="topnav">
+            <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+            <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+            <a  onclick="gotoSuburb()">Information For Suburb</a>
+            <a  onclick="gotoSearching()">Preferences Searching</a>
+            <a  onclick="gotoHome()">Home</a>
+        </div>
+
+
+        <div class="search-content">
+            <div>Search Result</div>
+            <div>
+            {% for user in list_sub %} 
+                <div style=" width: 300px;border: 3px solid rgb(224, 108, 0); padding:7px;background-color: #fae5ce;margin: 20px;">
+                    <div>
+                        <div style="background-color: #fae5ce;" onclick="gotoSearchOne('{{user[0]}}')"><div style="font-family:serif; margin-bottom: 25px; font-size:25px;cursor: pointer;"><b>{{ user[0] }} ({{user[1]}})</b></div></div>
+                        <div style="font-family:serif;margin:7px;text-align: right">Median Rent: {{ user[2] }}</div>
+                        <div style="font-family:serif;margin:7px;text-align: right">Number of Hospital: {{ user[3] }}</div>
+                        <div style="font-family:serif;margin:7px;text-align: right">Number of Cinema: {{ user[4] }}</div>
+                    </div>
+                </div>
+            {% endfor %} 
+            </div>
+                
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function gotoSearchOne(x) {
+        window.location.href = './'+x;
+    }
+
+    function gotoCompare() {
+        window.location.href = './compare.html';
+    }
+
+    function gotoSuburb() {
+        window.location.href = './search_all';
+    }
+
+    function gotoSearching() {
+        window.location.href = './filter';
+    }
+
+    function gotoHome() {
+        window.location.href = './search';
+    }
+
+
+
+</script>

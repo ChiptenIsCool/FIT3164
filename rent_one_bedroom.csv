@@ -1,0 +1,205 @@
+Suburb,Count,Median
+Albert Park,290,325
+Middle Park,290,325
+St Kilda West,290,325
+Armadale,236,330
+Carlton North,77,320
+Carlton,"2,583",255
+Parkville,"2,583",255
+Melbourne,"7,764",300
+St Kilda Rd,"7,764",300
+Collingwood,944,350
+Abbotsford,944,350
+Docklands,"1,461",330
+East Melbourne,272,360
+St Kilda East,498,295
+Elwood,494,315
+Fitzroy,308,380
+Fitzroy North,286,330
+Clifton Hill,286,330
+Flemington,431,320
+Kensington,431,320
+North Melbourne,"1,768",310
+West Melbourne,"1,768",310
+Port Melbourne,321,400
+Prahran,"1,014",325
+Windsor,"1,014",325
+Richmond,"1,164",350
+Burnley,"1,164",350
+South Melbourne,465,345
+South Yarra,"2,180",330
+Southbank,"2,088",330
+St Kilda,"1,599",320
+Toorak,165,310
+Balwyn,89,340
+Blackburn,155,335
+Box Hill,624,315
+Bulleen,172,340
+Templestowe,172,340
+Doncaster,172,340
+Burwood,219,240
+Ashburton,219,240
+Camberwell,346,330
+Glen Iris,346,330
+Canterbury,37,350
+Surrey Hills,37,350
+Mont Albert,37,350
+Chadstone,169,340
+Oakleigh,169,340
+Clayton,456,280
+Doncaster East,49,340
+Donvale,49,340
+East Hawthorn,469,320
+Glen Waverley,115,355
+Mulgrave,115,355
+Hawthorn,843,300
+Kew,84,338
+Mount Waverley,18,338
+Nunawading,84,330
+Mitcham,84,330
+Vermont,53,350
+Forest Hill,53,350
+Burwood East,53,350
+Aspendale,49,310
+Chelsea,49,310
+Carrum,49,310
+Bentleigh,231,300
+Brighton,95,380
+Carnegie,427,290
+Caulfield,663,300
+Cheltenham,146,350
+Elsternwick,276,300
+Hampton,161,340
+Beaumaris,161,340
+Malvern,145,325
+Malvern East,381,300
+Mentone,261,310
+Parkdale,261,310
+Mordialloc,261,310
+Murrumbeena,270,280
+Hughesdale,270,280
+Altona,108,280
+Footscray,669,290
+Keilor East,239,320
+Avondale Heights,239,320
+Melton,20,352
+Newport,78,290
+Spotswood,78,290
+St Albans,49,250
+Deer Park,49,250
+Sunshine,142,233
+Werribee,81,295
+Hoppers Crossing,81,295
+West Footscray,189,260
+Williamstown,67,350
+Yarraville,174,270
+Seddon,174,270
+Broadmeadows,62,250
+Roxburgh Park,62,250
+Brunswick,578,320
+Coburg,166,310
+Pascoe Vale South,166,310
+Craigieburn,15,300
+East Brunswick,576,350
+Essendon,394,300
+Gladstone Park,19,295
+Tullamarine,19,295
+Moonee Ponds,552,330
+Ascot Vale,552,330
+Oak Park,78,285
+Glenroy,78,285
+Fawkner,78,285
+Pascoe Vale,59,250
+Coburg North,59,250
+Sunbury,11,265
+West Brunswick,440,290
+Bundoora,259,300
+Greensborough,259,300
+Hurstbridge,259,300
+Eltham,26,325
+Research,26,325
+Montmorency,26,325
+Fairfield,268,295
+Alphington,268,295
+Heidelberg,174,330
+Heidelberg West,174,330
+Ivanhoe,90,350
+Ivanhoe East,90,350
+Mill Park,43,300
+Epping,43,300
+Northcote,357,320
+Preston,335,320
+Reservoir,189,300
+Thomastown,37,300
+Lalor,37,300
+Thornbury,384,295
+Bayswater,13,290
+Boronia,41,330
+Croydon,56,300
+Lilydale,56,300
+Ferntree Gully,10,250
+Ringwood,84,350
+Rowville,13,330
+Wantirna,42,348
+Scoresby,42,348
+Yarra Ranges,40,300
+Berwick,16,300
+Cranbourne,34,280
+Dandenong,222,270
+Dandenong North,67,270
+Endeavour Hills,67,270
+Narre Warren,18,250
+Hampton Park,18,250
+Noble Park,188,250
+Pakenham,13,295
+Springvale,147,270
+Dromana,22,310
+Portsea,22,310
+Frankston,306,250
+Hastings,10,240
+Flinders,10,240
+Mount Eliza,14,365
+Mornington,14,365
+Mount Martha,14,365
+Seaford,63,260
+Carrum Downs,63,260
+Belmont,122,268
+Grovedale,122,268
+Corio,20,223
+Geelong,145,295
+Newcombe,145,295
+Herne Hill,155,250
+Geelong West,155,250
+Newtown,45,250
+North Geelong,40,230
+Ballarat,58,205
+Sebastopol,52,228
+Delacombe,52,228
+Wendouree,70,190
+Alfredton,70,190
+Bendigo,28,243
+Flora Hill,32,200
+Bendigo East,32,200
+Golden Square,15,195
+Kangaroo Flat,15,195
+North Bendigo,16,223
+Bairnsdale,23,220
+Benalla,26,220
+Echuca,25,200
+Hamilton,21,180
+Horsham,31,225
+Mildura,61,210
+Moe,73,180
+Newborough,73,180
+Morwell,32,188
+Portland,18,235
+Sale,73,200
+Maffra,73,200
+Seymour,15,200
+Shepparton,84,215
+Swan Hill,54,170
+Torquay,25,300
+Traralgon,81,210
+Wanagaratta,50,198
+Warrnambool,48,240
+Wodonga,54,200

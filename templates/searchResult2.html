@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["region"].value;
+            if (x == "Select") {
+                alert("Please select a Region");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body class="suburbBody" onload="xx()">
+    <div class="pages">
+        <div class="topnav">
+            <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+            <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+            <a  onclick="gotoSuburb()">Information For Suburb</a>
+            <a  onclick="gotoSearching()">Preferences Searching</a>
+            <a  onclick="gotoHome()">Home</a>
+        </div>
+
+
+
+
+            
+
+            <form name="myForm" action="#" onsubmit="return validateForm()" method="post" required>
+                <div style="padding:10px ; display: flex;">
+                    
+                    <label for="lastname">Choose Region: </label>
+                    <select name="region" id="region">
+                    </select><br>
+                    
+                    <button type="submit">Search</button><br>
+                </div>
+            </form>
+
+            <h2 style="margin-left: 15px;">{{region}}</h2>
+
+
+            <div>
+                <h3 style="margin-left: 30px;">List of Suburbs</h3>
+                <div id="demo">
+
+                </div>
+                <script>
+                    function gotoSearchOne(x) {
+                        window.location.href = './'+x;
+                    }
+                
+                    function gotoCompare() {
+                        window.location.href = './compare.html';
+                    }
+                
+                    function gotoSuburb() {
+                        window.location.href = './search_all';
+                    }
+                
+                    function gotoSearching() {
+                        window.location.href = './filter';
+                    }
+                
+                    function gotoHome() {
+                        window.location.href = './search';
+                    }
+                
+                
+                
+                </script>
+
+
+
+
+                <script>
+                        var list_sub = {{ list_sub| tojson}};
+                        let text = ''
+                        for (let i = 0; i < list_sub.length; i++) {
+                            text += '<div style="display:flex;margin-left:50px">'
+                            for (let j = 0; j < list_sub[i].length; j++) {
+                                text += '<div style="width: 150px;height: 24px;margin-top:20px;margin-bottom:20px;border: 3px outset coral;margin-left:40px;cursor: pointer;"onclick="gotoSearchOne(\''+list_sub[i][j]+'\')"> <div style="margin-top:2px;text-align:center;" >'+list_sub[i][j]+'</div></div>'
+                            }
+                            text += '</div>'
+
+                        }
+
+
+                        document.getElementById("demo").innerHTML = text;
+                </script>
+ 
+                     
+
+                 
+             
+             </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    function gotoSearchOne(x) {
+        window.location.href = './'+x;
+    }
+
+    function gotoCompare() {
+        window.location.href = './compare.html';
+    }
+
+    function gotoSuburb() {
+        window.location.href = './search_all';
+    }
+
+    function gotoSearching() {
+        window.location.href = './filter';
+    }
+
+    function gotoHome() {
+        window.location.href = './search';
+    }
+
+
+
+</script>
+
+
+<script>
+    function xx() {
+        var region_list = {{ region_list| tojson}};
+        var list_sub = {{ list_sub| tojson}};
+
+        var opt = "";
+        opt += "<option value=\"Select\">Select</option>"
+        opt += "<option value=\"All Region\">All Region</option>"
+
+        for (var i = 0; i < region_list.length; i++) {
+            opt += "<option value='" + region_list[i] + "'>" + region_list[i] + "</option>";
+
+        }
+
+        document.getElementById('region').innerHTML = opt;
+    }
+
+
+</script>
+
+
+
+

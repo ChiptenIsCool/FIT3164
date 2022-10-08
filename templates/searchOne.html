@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["uni"].value;
+            if (x == "Select") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body class="searchOneBody" onload="xx()">
+    <div class="topnav">
+        <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+        <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+        <a  onclick="gotoSuburb()">Information For Suburb</a>
+        <a  onclick="gotoSearching()">Preferences Searching</a>
+        <a  onclick="gotoHome()">Home</a>
+    </div>
+    <div style="display: flex;">
+        <div style="width: 1000px;">
+            <div>
+                <div class="scoreName">
+                    <div class="scoreTileName"> Suburb Information</div>
+                </div>
+                <div class="scoreName">
+                    <div class="scoreTile"> {{suburb}} ({{show[2]}})</div>
+                </div>
+            </div>
+
+            <div style="background-color: #fff;width: 500px;height: 300px;margin-left: 100px;">
+                <div>
+                    <div style="border: 3px outset coral;height: 300px; width: 600px;margin-top: 15px;">
+                        <div id="map" style=" height: 300px; width: 600px;filter: invert(0%); border:0;opacity:1;">
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript">
+                        function myFunc(vars) {
+                            return vars
+                        }
+
+                        function initMap() {
+                            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/'
+                            myCinema = myFunc({{ your_list | tojson }});
+                            myHospital = myFunc({{ your_list2 | tojson }});
+                            myRestaurant = myFunc({{ restaurant_list | tojson }});
+                            const uluru = { lat: parseFloat('{{suburb_coor[0]}}'), lng: parseFloat('{{suburb_coor[1]}}') };
+                            const map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 14,
+                                center: uluru,
+                            });
+                            for (i = 0; i < myCinema.length; i++) {
+                                const marker = new google.maps.Marker({
+                                    position: { lat: parseFloat(myCinema[i][0]), lng: parseFloat(myCinema[i][1]) },
+                                    map: map,
+                                    icon: iconBase + 'parking_lot_maps.png',
+                                });
+                            }
+                            for (i = 0; i < myHospital.length; i++) {
+                                const marker = new google.maps.Marker({
+                                    position: { lat: parseFloat(myHospital[i][2]), lng: parseFloat(myHospital[i][3]) },
+                                    map: map,
+                                    icon: { url: 'http://maps.google.com/mapfiles/kml/pal3/icon46.png', scaledSize: new google.maps.Size(25, 25) }
+                                });
+                            }
+                            for (i = 0; i < myRestaurant.length; i++) {
+                                const marker = new google.maps.Marker({
+                                    position: { lat: parseFloat(myRestaurant[i][0]), lng: parseFloat(myRestaurant[i][1]) },
+                                    map: map,
+                                    icon: { url: 'http://maps.google.com/mapfiles/kml/pal2/icon40.png', scaledSize: new google.maps.Size(19, 19) }
+                                });
+                            }
+                        }
+
+
+                    </script>
+                </div>
+            </div>
+
+            <div style="margin-top: 5px;margin-left: 35px;font-size:larger;color: #5a2514;font-family:'Times New Roman', Times, serif;">
+                <div style="margin-top:10px; margin-left:20px;text-align: left;"><h2>Conditions</h2></div>
+                
+                <div style="margin-top:10px; margin-left:20px;">
+
+                    <div class="one-list">
+                        <div style="width:250px;">Average Weekly Rent</div>
+                        <div style="width:250px;">: A${{show[0]}}</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px;">Average Annual Crime</div>
+                        <div style="width:250px;">: {{show[1]}} Incidents</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px; ">Distance to CBD</div>
+                        <div style="width:250px;">: {{dist_to_cbd}} km</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px;">Population</div>
+                        <div style="width:250px;">: {{show[3]}} people</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px;">Number of Hospitals</div>
+                        <div style="width:250px;">: {{show[4]}}</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px; ">Closest Hospital</div>
+                        <div style="width:250px;">: {{dist_to_closest_hospital}} km</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px;">Number of Cinemas</div>
+                        <div style="width:250px;">: {{show[5]}}</div>
+                    </div>
+                    <div class="one-list">
+                        <div style="width:250px; ">Closest Cinema</div>
+                        <div style="width:250px;">: {{dist_to_closest_cinema}} km</div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div style="margin-top:10px; margin-left:20px;text-align: left;"><h2>Public Transport travel</h2></div>
+                <div style="margin-top:10px; margin-left:20px;">
+                    <div>
+                        <form name="myForm" action="#" onsubmit="return validateForm()" method="post" required>
+                            <div class="one-list">
+                                <label for="lastname" style="width:250px">Choose University</label>
+                                <select name="uni" id="uni" style="width:250px;">
+                                </select><br>
+                            </div>
+                            <div class="one-list">
+                                <label for="departuretime" style="width:250px;">Departure (date and time):</label>
+                                <div ><input type="datetime-local" id="departuretime" name="departuretime" value="{{currtime}}"min={{currtime}} step="any"></div>
+                                <button type="submit">Search</button><br>
+                            </div>
+                            <div class="one-list">
+                                <div style="width:250px;">Destination:</div>
+                                <div>: {{dest_uni}}</div>
+                            </div>
+
+                            <div class="one-list">
+                                <div style="width:250px;">Travel Time:</div>
+                                <div style="width:250px;">: {{dur3}}</div>
+                            </div>
+                            <div class="one-list">
+                                <div style="width:250px;">Travel Distance:</div>
+                                <div style="width:250px;">: {{dist3}}</div>
+                            </div>
+                            <div class="one-list">
+                                <div style="width:250px;">Best Departure Time</div>
+                                <div style="width:250px;">: {{dep3}}</div>
+                            </div>
+                            <div class="one-list">
+                                <div style="width:250px;">Arrival Time:</div>
+                                <div style="width:250px;">: {{arr3}}</div>
+                            </div>
+                            <div class="one-list">
+                                <div style="width:250px;">Number of Changes:</div>
+                                <div style="width:250px;">: {{change_count}}</div>
+                            </div>
+                        </form>
+
+                    </div>
+                    
+                    <div>
+                        <div class="one-list">
+                            <div style="width:250px;">Directions:</div>
+                        </div>
+                        
+                        <div id="stop" style="margin-left: 50px; margin-top:20px;">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+
+                
+
+
+
+
+
+
+
+
+
+                <script>
+                    function xx() {
+                        var x = {{ list_of_uni| tojson
+                    }};
+                    var y = {{ stop_list| tojson}}
+
+                    var opt = "<option value=\"Select\" >Select</option>";
+                    var stop = "";
+                    for (var i = 0; i < x.length; i++) {
+                        opt += "<option value='" + x[i] + "'>" + x[i] + "</option>";
+
+                    }
+                    for (var i = 0; i < y.length; i++) {
+                        stop += "<div>'" + y[i] + "'</div><br />"
+                    }
+                    document.getElementById('uni').innerHTML = opt;
+                    document.getElementById('stop').innerHTML = stop;
+                    }
+
+
+                </script>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg&callback=initMap" defer></script>
+
+        <div style="width: 1000px;">
+
+            <div style="display: flex;padding: 50px;">
+                <div style="border: 3px outset coral;width: 400px; height: 200px;background-color: aliceblue; "></div>
+                <div style="margin-left: 50px; border: 3px outset coral;width: 400px; height: 200px;background-color: aliceblue;"></div>
+            </div>
+            <div style="display: flex;padding: 50px;">
+                <div style="border: 3px outset coral;width: 400px; height: 200px;background-color: aliceblue; "></div>
+                <div style="margin-left: 50px; border: 3px outset coral;width: 400px; height: 200px;background-color: aliceblue; "></div>
+            </div>
+        
+        
+        
+        
+        </div>
+    </div>
+</body>
+
+
+
+
+</html>
+
+
+
+
+<script>
+
+    function gotoSuburb() {
+        window.location.href = './search_all';
+    }
+
+    function gotoSearching() {
+        window.location.href = './filter';
+    }
+
+    function gotoHome() {
+        window.location.href = './search';
+    }
+
+
+
+</script>

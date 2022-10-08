@@ -1,0 +1,271 @@
+,Formal Name,Emergency Capable,Location Address,Suburb,Agency Type,Rating,No of rating,lat,lng
+0,Albert Road Clinic,NO,31-33 Albert Road,South Melbourne,Private Hospital,2,70,-37.8343682,144.9724031
+1,Albury Wodonga Health,YES,69 Vermont Street,Wodonga,Public Hospital,2,67,-36.0785951,146.9377197
+2,"Albury Wodonga Health, Albury Campus",YES,Borella,Albury,Public Hospital,2,67,-36.0785951,146.9377197
+3,Alexandra District Health,NO,20 Cooper Street,Alexandra,Public Hospital,2,12,-37.1941587,145.7172609
+4,Alfred Health,NO,Commercial Road,Melbourne,Public Hospital,3,566,-37.846154,144.9827473
+5,Alpine Health,NO,30 O'Donnell Avenue,Myrtleford,Multi Purpose Service,3,4,-36.5549135,146.7284382
+6,Angliss Hospital,YES,Albert Street,Upper Ferntree Gully,Public Hospital,3,275,-37.89867950000001,145.3137132
+7,Appearance Medical Centre,NO,57 Garsed Street,Bendigo,Day Procedure Centre,1,1,-36.7650747,144.2796937
+8,Austin Health,NO,145 Studley Road,Heidelberg,Public Hospital,3,453,-37.7562696,145.0586279
+9,Austin Health - Austin Hospital,YES,145 Studley Road,Heidelberg,Public Hospital,3,453,-37.7562696,145.0586279
+10,Austin Health - Heidelberg Repatriation Hospital,NO,300 Waterdale Road,Heidelberg Heights,Public Hospital,3,70,-37.7545146,145.0475097
+11,Bairnsdale Regional Health Service,YES,122 Day St,Bairnsdale,Public Hospital,3,57,-37.8312086,147.6077859
+12,Ballan District Health and Care,NO,33 Cowie Street,Ballan,Bush Nursing Hospital,2,15,-37.5997027,144.2224171
+13,Ballarat Day Procedure Centre,NO,1119/1123 Howitt Street,Ballarat,Day Procedure Centre,4,17,-37.5409245,143.8322296
+14,Barwon Health,YES,272-322 Ryrie Street,Geelong,Public Hospital,3,164,-38.1521039,144.3654034
+15,Bass Coast Health,NO,235 Graham Street,Wonthaggi,Public Hospital,3,49,-38.6074169,145.5817082
+16,Bayside Day Procedure and Specialist Centre,NO,141 Cranbourne Road,Frankston,Day Procedure Centre,0,0,-38.14815979999999,145.1434246
+17,Bayside Endoscopy Day Hospital,NO,441 South Road,Moorabbin,Day Procedure Centre,4,5,-37.9331058,145.0367002
+18,Bayswater Day Procedure and Specialist Centre,NO,664 Mountain Highway,Bayswater,Day Procedure Centre,3,32,-37.8439063,145.2487933
+19,Beaufort and Skipton Health Service,NO,28 Havelock Street,Beaufort,Public Hospital,3,1,-37.4309571,143.3826308
+20,Beechworth Health Service,NO,52 Sydney Road,Beechworth,Public Hospital,2,2,-36.349655,146.691525
+21,Beleura Private Hospital,NO,925 Nepean Highway,Mornington,Private Hospital,4,51,-38.224872,145.0494023
+22,Bellbird Private Hospital,NO,198 Canterbury Road,Blackburn,Private Hospital,4,22,-37.8331754,145.1558529
+23,Benalla Health,NO,45-63 Coster Street,Benalla,Public Hospital,4,18,-36.5553438,145.9947142
+24,Bendigo Day Surgery,NO,1-7 Chum Street,Bendigo,Day Procedure Centre,4,11,-36.7619607,144.2615725
+25,Bendigo Health,YES,62 Lucan St ,Bendigo,Public Hospital,3,132,-36.749617,144.280769
+26,Bentleigh Surgicentre,NO,155 Jasper Road,Bentleigh,Day Procedure Centre,4,4,-37.92025539999999,145.0412056
+27,Berwick Surgicentre,NO,22 Langmore Lane,Berwick,Day Procedure Centre,3,33,-38.033619,145.346499
+28,Boort District Health,NO,31 Kiniry Street,Boort,Public Hospital,4,3,-36.111934,143.7274037
+29,Box Hill Hospital,YES,51 Nelson Road ,Box Hill,Public Hospital,3,575,-37.8135607,145.1182877
+30,Brighton Plastic Surgery Centre,NO,206 New Street,Brighton,Day Procedure Centre,3,7,-37.9125015,144.9917703
+31,Broadmeadows Health Service,NO,35 Johnstone St,Broadmeadows,Public Hospital,3,75,-37.6848406,144.9123107
+32,Brunswick Private Hospital,NO,82 Moreland Road,Brunswick,Private Hospital,2,61,-37.7564796,144.9721741
+33,Bundoora Extended Care Centre,NO,1231 Plenty Road,Bundoora,Public Hospital,4,116,-37.7025026,145.0567762
+34,Cabrini Brighton,NO,243 New Street,Brighton,Private Hospital,4,53,-37.9115806,144.9911044
+35,Cabrini Health Elsternwick Rehabilitation Service,NO,494 Glenhuntly Road,Elsternwick,Private Hospital,4,8,-37.8856154,145.0093018
+36,Cabrini Hopetoun Rehabilitation,NO,2-4 Hopetoun Street,Elsternwick,Private Hospital,3,9,-37.8847701,145.0103551
+37,Cabrini Malvern,NO,181-183 Wattletree Road,Malvern,Private Hospital,3,129,-37.8626027,145.0333328
+38,Cabrini Prahran,NO,646 High Street,Prahran East,Private Hospital,4,5,-37.8542859,145.0088912
+39,Calvary Health Care Bethlehem Ltd.,NO,476 Kooyong Road,Caulfield,Denominational Hospital,4,13,-37.9905907,145.0728314
+40,Caritas Christi Hospice Ltd,NO,104 Studley Park Road,Kew,Denominational Hospital,5,6,-37.8044958,145.0156356
+41,Casey Hospital,YES,52 Kangan Drive,Berwick,Public Hospital,2,591,-38.045034,145.3461337
+42,Casterton Memorial Hospital,NO,63-69 Russell Street,Casterton,Public Hospital,4,6,-37.5901371,141.3923112
+43,Caulfield Hospital,NO,260 Kooyong Road,Caulfield,Public Hospital,3,51,-37.8839959,145.0158859
+44,Central Gippsland Health Service,YES,155 Guthridge Parade,Sale,Public Hospital,3,47,-38.1087287,147.0807893
+45,Central Highlands Rural Health,NO,13 Hospital Street,Daylesford,Public Hospital,0,0,-37.3374591,144.1454967
+46,Chesterville Day Hospital,NO,28 Chesterville Road,Cheltenham,Day Procedure Centre,4,27,-37.9605436,145.0567864
+47,Cobden District Health Service Inc.,NO,5 Victoria Street,Cobden,Bush Nursing Hospital,4,14,-38.332654,143.0759595
+48,Coburg Endoscopy Centre,NO,15 Munro Street,Coburg,Day Procedure Centre,3,61,-37.7450248,144.9647699
+49,Cohuna District Hospital,NO,144-158 King George Street,Cohuna,Public Hospital,4,4,-35.800075,144.2144376
+50,Colac Area Health,NO,2-28 Conner St,Colac,Public Hospital,4,86,-38.34123750000001,143.5825894
+51,Corryong Health,NO,20 Kiell Street,Corryong,Multi Purpose Service,5,1,-36.199312,147.902714
+52,Corymbia House,NO,92-94 David Street,Dandenong,Day Procedure Centre,3,13,-37.977232,145.21691
+53,Cotham Private Hospital,NO,209 Cotham Road,Kew,Private Hospital,4,8,-37.8086283,145.0480509
+54,Craigieburn Health Service,NO,350 Craigieburn Road West,Craigieburn,Public Hospital,2,48,-37.5957066,144.9197357
+55,Cranbourne Integrated Care Centre,NO,140-154 Sladen Street,Cranbourne,Public Hospital,3,56,-38.1130723,145.2816139
+56,Dandenong Eye Clinic,NO,1-3 Falkiner Crescent,Dandenong,Day Procedure Centre,3,8,-37.9742611,145.2234427
+57,Dandenong Hospital,YES,105-135 David Street,Dandenong,Public Hospital,2,489,-37.976484,145.2192169
+58,Darebin Endoscopy Services,NO,42 Station Street,Fairfield,Day Procedure Centre,3,10,-37.7811071,145.0175004
+59,Delmont Private Hospital,NO,298 Warrigal Road,Burwood,Private Hospital,2,64,-37.8569273,145.094055
+60,Dental Health Services Victoria,NO,720 Swanston Street,Carlton,Public Hospital,3,98,-37.7995725,144.9654271
+61,Dhelkaya Health [Castlemaine Health],NO,142 Cornish Street,Castlemaine,Public Hospital,4,18,-37.0542662,144.2116766
+62,Dhelkaya Health [Maldon Hospital],NO,Chapel Street,Maldon,Public Hospital,4,17,-36.9924824,144.0638653
+63,Diamond Valley Renal Care Centre,NO,Grimshaw Street,Greensborough,Day Procedure Centre,0,0,-37.7053152,145.1074813
+64,Digestive Health Centre,NO,90 David Street,Dandenong,Day Procedure Centre,4,23,-37.9773018,145.2166228
+65,Donvale Rehabilitation Hospital,NO,1119-1121 Doncaster Road,Donvale,Private Hospital,3,29,-37.7899294,145.1716482
+66,Dorset Rehabilitation Centre,NO,146 Derby Street,Pascoe Vale,Private Hospital,2,20,-37.7232931,144.9474315
+67,Dr Walters Vasectomy Centre,NO,486 Burwood Highway,Vermont South,Day Procedure Centre,0,0,-37.8161764,144.9861941
+68,East Grampians Health Service,NO,Lot 5B Girdlestone Street ,Ararat,Public Hospital,2,8,-37.2791485,142.9326584
+69,East Melbourne Day Procedure Centre,NO,116 - 118 Wellington Parade,East Melbourne,Day Procedure Centre,4,5,-37.8096567,144.9833304
+70,East Wimmera Health Service,NO,52 North Western Road,St Arnaud,Public Hospital,5,2,-36.6095268,143.2467322
+71,Eastern Health,NO,"Level 4, 5 Arnold Street",Box Hill,Public Hospital,3,57,-37.814519,145.1184531
+72,Eastside Endoscopy Centre,NO,33 Wantirna Road,Ringwood,Day Procedure Centre,4,21,-37.8197096,145.2276534
+73,Echuca Regional Health,YES,9-27 Frances Street,Echuca,Public Hospital,3,38,-36.1392035,144.7482315
+74,Epworth Cliveden,NO,29 Simpson Street,East Melbourne,Private Hospital,3,91,-37.8146135,145.1195945
+75,Epworth Eastern Hospital,NO,1 Arnold Street,Box Hill,Private Hospital,3,91,-37.8146135,145.1195945
+76,Epworth Freemasons,NO,166 Clarendon Street,East Melbourne,Private Hospital,3,74,-37.8092455,144.9824416
+77,Epworth Rehabilitation Brighton,NO,85-91 Wilson Street,Brighton,Private Hospital,3,7,-37.9136211,145.0026073
+78,Epworth Rehabilitation Camberwell,NO,888 Toorak Road,Camberwell,Private Hospital,3,52,-37.8461003,145.0540297
+79,Epworth Richmond,YES,89 Bridge Road,Richmond,Private Hospital,3,336,-37.8172016,144.9930606
+80,Essendon Day Procedure Centre,NO,"Level 2, 665 Mount Alexander Road",Moonee Ponds,Day Procedure Centre,4,12,-37.765803,144.9236958
+81,Essendon Private Clinic,NO,33-35 Rosehill Road,Essendon,Private Hospital,2,19,-37.7484684,144.8853927
+82,Euroa Health Inc,NO,36 Kennedy Street,Euroa,Bush Nursing Hospital,5,2,-36.7593806,145.5703833
+83,Footscray Hospital,YES,160 Gordon Street,Footscray,Public Hospital,2,257,-37.7923293,144.8872193
+84,Forest Hill Dialysis Centre,NO,"Shops 26 & 27 Forest Hill Chase, 69 Mahoneys ",Forest Hill,Day Procedure Centre,5,1,-37.83622099999999,145.166476
+85,Frances Perry House,NO,Levels 6 & 7 Cnr Grattan St & Flemington Rd,Parkville,Private Hospital,3,82,-37.7986688,144.9545112
+86,Frankston Hospital,YES,Hastings Rd,Frankston,Public Hospital,3,297,-38.1514184,145.1294675
+87,Geelong Private Hospital,NO,272 Ryrie St,Geelong,Private Hospital,4,67,-38.1512684,144.3575627
+88,Gippsland Southern Health Service,NO,66 Koonwarra Road,Leongatha,Public Hospital,4,21,-38.4874581,145.950678
+89,Glen Eira Day Surgery,NO,554 Hawthorn Road,Caulfield South,Day Procedure Centre,2,3,-37.900434,145.019214
+90,Glenferrie Private Hospital,NO,25 Linda Crescent,Hawthorn,Private Hospital,4,36,-37.8194718,145.0315945
+91,Goulburn Valley Health,YES,2 Graham Street,Shepparton,Public Hospital,2,127,-36.3637012,145.4045256
+92,Grampians Health [Ballarat Health Services],YES,Drummond Street North,Ballarat,Public Hospital,0,0,-37.5593776,143.845827
+93,Grampians Health [Edenhope and District Hospital],NO,128-134 Elizabeth Street,Edenhope,Public Hospital,5,2,-37.0352691,141.2887638
+94,Grampians Health [Stawell Regional Health],NO,27-29 Sloane Street ,Stawell,Public Hospital,3,16,-37.0594054,142.7813821
+95,Grampians Health [Wimmera Health Care Group],YES,83 Baillie Street,Horsham,Public Hospital,3,33,-36.7125503,142.208812
+96,Hawthorn Birth and Development Centre,NO,144 Barkers Road,Hawthorn,Private Hospital,3,8,-37.8243082,145.0466976
+97,Healesville and District Hospital,NO,377 Maroondah Highway,Healesville,Public Hospital,4,20,-37.646935,145.5289305
+98,Heathcote Health,NO,39 Hospital Street,Heathcote,Public Hospital,3,5,-36.9258855,144.709277
+99,Heidelberg Endoscopy and Day Surgery Centre,NO,177-179 Northern Road,Heidelberg,Day Procedure Centre,5,5,-37.7305243,145.0603294
+100,Hesse Rural Health Service,NO,8 Gosney Street,Winchelsea,Public Hospital,5,2,-38.2434675,143.9855552
+101,Heyfield Hospital Inc.,NO,21 Tyson Road,Heyfield,Bush Nursing Hospital,3,4,-37.9763259,146.7840094
+102,Heywood Rural Health,NO,21 Barclay Street,Heywood,Public Hospital,0,0,-38.1378551,141.6243082
+103,Hobson's Bay Endoscopy Centre Altona,NO,5 Sargood Street,Altona,Day Procedure Centre,3,4,-37.8694783,144.828376
+104,Hobson's Bay Werribee Endoscopy Centre,NO,179 Princes Highway,Werribee,Day Procedure Centre,0,0,-37.8907042,144.6865082
+105,Hyperbaric Health Wound Centre Berwick,NO,3 Gibb Street,Berwick,Day Procedure Centre,3,3,-38.03447269999999,145.3445013
+106,Inglewood and District Health Service,NO,3 Hospital Street,Inglewood,Public Hospital,5,2,-36.5721911,143.8739346
+107,Ivanhoe Endoscopy and Day Procedure Centre,NO,2/226 Upper Heidelberg Road,Ivanhoe,Day Procedure Centre,4,121,-37.767005,145.044898
+108,Jessie McPherson Private Hospital,NO,246 Clayton Road,Clayton,Private Hospital,3,55,-37.9208214,145.1224793
+109,John Fawkner Private Hospital,NO,275 Moreland Road,Coburg,Private Hospital,3,123,-37.7543196,144.9584821
+110,Jolimont Endoscopy,NO,19/201 Wellington Parade South,East Melbourne,Day Procedure Centre,3,8,-37.8169086,144.9786578
+111,Keilor Private,NO,771 Old Calder Highway,Keilor,Day Procedure Centre,4,24,-37.7196362,144.8345422
+112,Kerang District Health,NO,13 Burgoyne Street,Kerang,Public Hospital,3,10,-35.724085,143.9184734
+113,Kew Endoscopy Centre,NO,"Units 4/5, 828 High Street",Kew,Day Procedure Centre,3,11,-37.7946623,145.0626303
+114,Kilmore District Health,NO,Rutledge Street,Kilmore,Public Hospital,3,56,-37.302337,144.9582077
+115,Kingston Centre,NO,400 Warrigal Rd ,Cheltenham,Public Hospital,2,46,-37.9552674,145.0786843
+116,Knox Private Hospital,NO,262 Mountain Highway,Wantirna,Private Hospital,2,224,-37.8494319,145.227497
+117,Kooweerup Regional Health Service,NO,Rossiter Rd,Kooweerup,Public Hospital,5,9,-38.2004129,145.4846125
+118,Kyabram District Health Service,NO,88 Fenaughty Street,Kyabram,Public Hospital,3,8,-36.3147857,145.0423815
+119,La Trobe Private Hospital,NO,Cnr Plenty Road & Kingsbury Drive,Bundoora,Private Hospital,2,6,-37.7164074,145.0443877
+120,Latrobe Regional Hospital,YES,Cnr Princes Highway & Village Avenue ,Traralgon West,Public Hospital,2,100,-38.2185533,146.4717147
+121,Linacre Private Hospital,NO,12-16 Linacre Road,Hampton,Private Hospital,4,41,-37.9426492,145.0031924
+122,Mallee Track Health and Community Service,NO,28 Britt Street,Ouyen,Multi Purpose Service,4,20,-35.0744664,142.312508
+123,Malvern Dialysis Centre,NO,"Ground Floor, 1133 Malvern Road",Malvern,Day Procedure Centre,5,2,-37.8514647,145.0306918
+124,Malvern Private Hospital,NO,3-9 Wilton Vale Crescent,Malvern East,Private Hospital,3,46,-37.8669652,145.0606003
+125,Manningham Day Procedure Centre,NO,"Level 3, 200 High Street",Lower Templestowe,Day Procedure Centre,4,10,-37.7735634,145.1155995
+126,Mansfield District Hospital,NO,53 Highett Street,Mansfield,Public Hospital,3,14,-37.0575225,146.0859839
+127,Marie Stopes International East St Kilda,NO,338 Dandenong Road,St Kilda East,Day Procedure Centre,3,56,-37.8602255,145.0077017
+128,Marie Stopes International Maroondah,NO,411 Dorset Road,Croydon,Day Procedure Centre,2,25,-37.8087275,144.9779324
+129,Maroondah Hospital,YES,1-15 Mt Dandenong Rd,East Ringwood,Public Hospital,3,259,-37.8069517,145.2544966
+130,Maryborough District Health Service,NO,75-87 Clarendon St,Maryborough,Public Hospital,3,19,-37.0448906,143.7380248
+131,Maryvale Private Hospital,NO,McDonald Street,Morwell,Private Hospital,3,16,-38.215552,146.4190443
+132,Masada Private Hospital,NO,26-28 Balaclava Road,East St Kilda,Private Hospital,4,60,-37.8695549,145.0032336
+133,Melbourne Day Surgery,NO,961 Glenhuntly Road,Caulfield,Day Procedure Centre,5,3,-37.8878718,145.0304131
+134,Melbourne Endoscopy Group DPC,NO,34/517 St Kilda Road,Melbourne,Day Procedure Centre,5,1,-37.8445765,144.9793375
+135,Melbourne Endoscopy Monash Day Hospital (DPC),NO,277 Clayton Road,Clayton,Day Procedure Centre,5,12,-37.9213881,145.1202049
+136,Melbourne Health,NO,"Level 8 South, RMH, 300 Grattan Street",Parkville,Public Hospital,3,538,-37.7986657,144.955973
+137,Melbourne Oral and Facial Surgery Pty Ltd,NO,"Level 12, 63 Exhibition Street",Melbourne,Day Procedure Centre,4,5,-37.8143353,144.9696911
+138,Melbourne Private Hospital,NO,1f Royal Parade ,Parkville,Private Hospital,3,58,-37.7983026,144.9572802
+139,Melton Health,NO,195-209 Barries Road,Melton,Public Hospital,3,51,-37.6869039,144.5579637
+140,Mercy Health - O'Connell Family Centre,NO,6 Mont Albert Road,Canterbury,Denominational Hospital,3,13,-37.8165843,145.0617378
+141,Mercy Hospital for Women,YES,163 Studley Road,Heidelberg,Denominational Hospital,4,224,-37.7564835,145.0609354
+142,Mercy Hospitals Victoria Limited,NO,Shelley Street,Richmond,Denominational Hospital,2,777,-37.8870779,144.698109
+143,Mildura Private Hospital,NO,220 Thirteenth Street,Mildura,Private Hospital,0,0,-34.1848308,142.1456187
+144,Mitcham Private Hospital,NO,27 Doncaster East Road,Mitcham,Private Hospital,3,126,-37.8104249,145.195047
+145,Monash Health,NO,246 Clayton Road,Clayton,Public Hospital,2,621,-37.9199669,145.1242371
+146,Monash IVF Clinic,NO,142 Little Ryrie Street,Geelong,Day Procedure Centre,3,21,-37.9218259,145.1206991
+147,"Monash Medical Centre, Clayton Campus",YES,246 Clayton Road,Clayton,Public Hospital,2,36,-37.9119934,145.1332335
+148,"Monash Medical Centre, Moorabbin Campus",NO,865 Centre Road,East Bentleigh,Public Hospital,4,100,-37.9208407,145.0635101
+149,Monash Surgical Private Hospital,NO,252-254 Clayton Road,Clayton,Private Hospital,3,10,-37.9221538,145.1205487
+150,"Mount Eliza Rehabilitation, Aged and Palliative Care",NO,33 Jacksons Rd,Mt Eliza,Public Hospital,3,14,-38.2089767,145.0759735
+151,Moyne Health Services,NO,Villiers Street,Port Fairy,Public Hospital,5,3,-38.3815405,142.2274995
+152,Mulgrave Private Hospital,NO,535-559 Police Road,Mulgrave,Private Hospital,3,267,-37.9389057,145.2133519
+153,Murray Valley Private Hospital,NO,63 Pearce St ,Wodonga,Private Hospital,3,5,-36.1382941,146.8762831
+154,Nagambie HealthCare,NO,22 Church Street,Nagambie,Bush Nursing Hospital,3,2,-36.7808316,145.1502457
+155,NCN Health,NO,2 Katamatitie Road,Numurkah,Public Hospital,3,4,-36.056341,145.197655
+156,Neerim District Soldiers Memorial Hospital,NO,29 Main Road,Neerim,Private Hospital,4,7,-38.022586,145.95387
+157,Noble Park Endoscopy Centre,NO,1304 Heatherton Road,Noble Park,Day Procedure Centre,5,17,-37.9672248,145.1896812
+158,North Eastern Rehabilitation Centre,NO,134-142 Ford Street,Ivanhoe,Private Hospital,3,23,-37.7634226,145.0313292
+159,Northeast Health Wangaratta,YES,35-47 Green Street,Wangaratta,Public Hospital,4,68,-36.3541893,146.313554
+160,Northern Health,NO,201 Bell Street,Preston,Public Hospital,4,59,-37.6530375,145.0150967
+161,Northpark Private Hospital,NO,10 Greenhills Road,Bundoora,Private Hospital,3,154,-37.6914854,145.0627991
+162,Northwest Day Hospital,NO,221 Maribyrnong Road,Ascot Vale,Day Procedure Centre,3,42,-37.77130570000001,144.9093788
+163,Omeo District Health,NO,12 Easton Street,Omeo,Public Hospital,4,5,-37.09841480000001,147.5969877
+164,Orbost Regional Health,NO,Boundary Road,Orbost,Multi Purpose Service,2,13,-37.7018973,148.4655867
+165,PANCH Health Service,NO,300 Bell Street,Preston,Public Hospital,3,26,-37.7454649,145.007603
+166,Peninsula Endoscopy Centre,NO,17 Yuille Street,Frankston,Day Procedure Centre,3,79,-38.148287,145.1433653
+167,Peninsula Health,NO,"c/- Frankston Hospital, Hastings Road",Frankston,Public Hospital,3,32,-38.1508127,145.1284726
+168,Peninsula Oncology Centre,NO,24-28 Frankston-Flinders Road,Frankston,Day Procedure Centre,5,1,-38.154668,145.132856
+169,Peninsula Private Hospital,NO,49 McClelland Drive,Frankston,Private Hospital,3,152,-38.15771429999999,145.1694092
+170,"Peter James Centre, The",NO,321-345 Burwood Hwy,Forest Hill,Public Hospital,3,27,-37.8523607,145.1640108
+171,Peter MacCallum Cancer Institute,NO,305 Grattan Street,Melbourne,Public Hospital,4,8,-37.92081770000001,145.0631279
+172,Portland District Health,NO,Bentinck Street,Portland,Public Hospital,3,31,-38.3412033,141.6051898
+173,Queen Elizabeth Centre,NO,53 Thomas Street,Noble Park,Public Hospital,4,22,-37.9720602,145.1784497
+174,Reservoir Private Hospital,NO,73-75 Pine Street,Reservoir,Private Hospital,2,22,-37.7175127,144.9978706
+175,Ringwood Private Hospital,NO,36 Mount Dandenong Road,Ringwood,Private Hospital,3,34,-37.8113099,145.2438605
+176,Robinvale District Health Services,NO,128-132 Latje Road,Robinvale,Multi Purpose Service,3,6,-34.5840857,142.7813896
+177,Rochester and Elmore District Health Service,NO,1 Pascoe Street,Rochester,Public Hospital,3,6,-36.3658135,144.6979363
+178,Rosebud Endoscopy,NO,1537 Point Nepean Road,Rosebud West,Day Procedure Centre,4,22,-38.3620241,144.8891124
+179,Rosebud Hospital,YES,1527 Point Nepean Road,Rosebud,Public Hospital,3,65,-38.3628704,144.8846632
+180,Royal Melbourne Hospital - City Campus,YES,300 Grattan Street,Parkville,Public Hospital,3,33,-37.7782846,144.9472969
+181,Royal Melbourne Hospital - Royal Park Campus,NO,34-55 Poplar Road,Parkville,Public Hospital,3,33,-37.7782846,144.9472969
+182,Royal Talbot Rehabilitation Centre,NO,1 Yarra Boulevard,Kew,Public Hospital,3,14,-37.7894409,145.0229496
+183,Rural Northwest Health,NO,Lot 1 Dimboola Road,Warracknabeal,Public Hospital,3,4,-36.2523974,142.381872
+184,Sandringham Hospital,YES,193 Bluff Road,Sandringham,Public Hospital,3,234,-37.961053,145.0177361
+185,Seymour Health,NO,Lot 2 Bretonneux Street ,Seymour,Public Hospital,4,22,-37.0186725,145.1387513
+186,Shepparton Private Hospital,NO,20 Fitzgerald Street,Shepparton,Private Hospital,4,15,-36.3593756,145.411116
+187,Sir John Monash Private Hospital,NO,212-220 Clayton Road,Clayton,Day Procedure Centre,3,17,-37.9186962,145.1214391
+188,South Eastern Private Hospital,NO,313-329 Princes Highway,Noble Park,Private Hospital,3,62,-37.9663681,145.1921275
+189,South Gippsland Hospital,NO,87 Station Road,Foster,Public Hospital,4,10,-38.6588006,146.2061303
+190,South West Healthcare,NO,Ryot Street,Warrnambool,Public Hospital,3,54,-38.3801373,142.473434
+191,"South West Healthcare, Camperdown Campus",NO,9 Robinson Street,Camperdown,Public Hospital,4,14,-38.2371182,143.1376706
+192,"South West Healthcare, Warrnambool Campus",YES,Ryot Street,Warrnambool,Public Hospital,3,54,-38.3801373,142.473434
+193,Southern Cross Specialist Centre Day Surgery,NO,250 Childs Road,Mill Park,Day Procedure Centre,3,62,-38.0347835,145.2642997
+194,"Southern Eye Centre, Day Surgery and Laser Centre",NO,44 Cranbourne Road,Frankston,Day Procedure Centre,3,12,-38.1458715,145.1320214
+195,Specialist Surgicentre Docklands,NO,"Tenancy 2, 22 Rakaia Way",Docklands,Day Procedure Centre,3,3,-37.814629,144.9411856
+196,Specialist Surgicentre Geelong,NO,200 Malop Street,Geelong,Day Procedure Centre,3,18,-38.1490452,144.3664184
+197,Springvale Endoscopy Services,NO,20 Balmoral Avenue,Springvale,Day Procedure Centre,4,13,-37.9494435,145.1496381
+198,St Alban's Endoscopy Centre,NO,328-330 Station Road,St Albans,Day Procedure Centre,3,23,-37.7440274,144.7794771
+199,St George's Health Service,NO,283 Cotham Road,Kew,Public Hospital,3,23,-37.8091863,145.0529761
+200,St John of God Frankston Rehabilitation Hospital,NO,255 Cranbourne Road,Frankston,Private Hospital,4,18,-38.1527902,145.1558227
+201,"St John of God Hospital Pinelodge Clinic, Dandenong",NO,1480 Heatherton Road,Dandenong,Private Hospital,0,0,-38.0344013,145.3443999
+202,"St John of God Hospital, Ballarat",NO,101 Drummond Street North,Ballarat,Private Hospital,3,51,-37.557744,143.847746
+203,"St John of God Hospital, Bendigo",NO,133-145 Lily Street ,Bendigo,Private Hospital,4,44,-36.7621268,144.2632878
+204,"St John of God Hospital, Berwick",NO,44 Gloucester Avenue ,Berwick,Private Hospital,4,144,-38.04533190000001,145.3450762
+205,"St John of God Hospital, Geelong",NO,80 Myers Street,Geelong,Private Hospital,4,67,-38.1512684,144.3575627
+206,"St John of God Hospital, Warrnambool",NO,136 Botanic Road,Warrnambool,Private Hospital,4,17,-38.3717557,142.478466
+207,St Kilda Day Hospital,NO,26A Dickens Street,Elwood,Day Procedure Centre,5,14,-37.8732703,144.9818957
+208,St Vincent's Health,NO,41 Victoria Parade,Fitzroy,Denominational Hospital,3,418,-37.8070382,144.9749751
+209,St Vincent's Hospital (Melbourne) Ltd,YES,41 Victoria Parade,Fitzroy,Denominational Hospital,3,418,-37.8070382,144.9749751
+210,St Vincent's Private Hospital East Melbourne,NO,159 Grey Street,East Melbourne,Private Hospital,4,97,-37.8120635,144.9841212
+211,St Vincent's Private Hospital Fitzroy,NO,59 Victoria Parade,Fitzroy,Private Hospital,3,14,-37.8071807,144.9759898
+212,St Vincent's Private Hospital Kew,NO,5 Studley Avenue,Kew,Private Hospital,4,43,-37.8064793,145.0238036
+213,Stonnington Day Surgery,NO,"Level 1, 253 Wattletree Road",Malvern,Day Procedure Centre,5,10,-37.8636282,145.0394547
+214,Sunbury Day Hospital,NO,Macedon,Sunbury,Public Hospital,4,16,-37.5769227,144.7322842
+215,Sunshine Hospital,YES,176 Furlong Road,St Albans,Public Hospital,2,437,-37.7596609,144.8170479
+216,Sunshine Private Day Surgery,NO,145 Furlong Road,St Albans,Day Procedure Centre,3,14,-37.7610281,144.81631
+217,Swan Hill District Health,YES,48 Splatt Street,Swan Hill,Public Hospital,2,37,-35.3405415,143.5561809
+218,Tallangatta Health Service,NO,Barree Street,Tallangatta,Public Hospital,5,2,-36.2136706,147.1834318
+219,Tarietta Day Surgery,NO,73 Kooyong Road,Caulfield North,Day Procedure Centre,4,27,-37.9605436,145.0567864
+220,Terang and Mortlake Health Service,NO,1 Austin Avenue,Terang,Public Hospital,3,5,-38.239325,142.902109
+221,The Alfred,YES,Commercial Road ,Melbourne,Public Hospital,3,566,-37.846154,144.9827473
+222,The Avenue Private Hospital,NO,40 The Avenue,Windsor,Private Hospital,3,133,-37.8547708,144.9987172
+223,The Bays Hospital,NO,262-268 Main Street,Mornington,Private Hospital,4,45,-38.2241268,145.0418028
+224,The Bays Hospital - Hastings,NO,86 Victoria St,Hastings,Private Hospital,5,1,-38.303444,145.190309
+225,The Geelong Clinic,NO,98 Townsend Road,Whittington,Private Hospital,3,17,-38.1823297,144.3933152
+226,The Glen Endoscopy Centre,NO,302 Springvale Road,Glen Waverley,Day Procedure Centre,4,17,-37.8846456,145.165209
+227,The Hampton Park Women's Health Care Centre,NO,2 Warana Drive,Hampton Park,Day Procedure Centre,3,40,-38.0316217,145.2685959
+228,The Melbourne Clinic ,NO,130 Church Street,Richmond,Private Hospital,2,147,-37.8146209,144.998825
+229,The Melbourne Eastern Private Hospital,NO,157 Scoresby Road,Boronia,Private Hospital,3,29,-37.8554628,145.2687129
+230,The Northern Hospital,YES,185 Cooper Street ,Epping,Public Hospital,2,738,-37.6535152,145.0145371
+231,The Royal Children's Hospital,YES,50 Flemington Road,Parkville,Public Hospital,4,446,-37.7935429,144.9496746
+232,The Royal Victorian Eye and Ear Hospital,YES,32 Gisborne Street,East Melbourne,Public Hospital,2,296,-37.8089722,144.976047
+233,The Royal Women's Hospital,YES,Levels 6 & 7 Cnr Grattan St & Flemington Rd,Parkville,Public Hospital,3,321,-37.7988194,144.9551944
+234,The Victoria Clinic,NO,324 Malvern Road,Prahran,Private Hospital,2,45,-37.8476254,144.9972002
+235,The Victorian Rehabilitation Centre,NO,499 Springvale Road,Glen Waverley,Private Hospital,4,28,-37.898362,145.1620333
+236,The Women's Clinic Day Surgical Centre,NO,366 Church Street,Richmond,Day Procedure Centre,3,7,-37.7610625,144.8163697
+237,Timboon and District Healthcare Service,NO,21 Hospital Road,Timboon,Multi Purpose Service,2,6,-38.486205,142.976516
+238,Toorak Cosmetic Surgery Day Centre,NO,109 Mathoura Rd ,Toorak,Day Procedure Centre,0,0,-37.8413842,145.0080113
+239,Toorak-Malvern Day Surgery Centre,NO,30-32 Glenferrie Road,Malvern,Day Procedure Centre,5,10,-37.8636282,145.0394547
+240,Tweddle Child and Family Health Service,NO,53 Adelaide Street,Footscray,Public Hospital,3,47,-37.7974628,144.8873786
+241,Victoria Parade Surgery Centre,NO,"Level 1, 100 Victoria Parade",East Melbourne,Day Procedure Centre,4,17,-37.808603,144.9749085
+242,Victorian Gut Centre Bundoora,NO,119 Plenty Road,Bundoora,Day Procedure Centre,3,26,-37.6924789,145.0617993
+243,Victorian Sleep Centre,NO,695-697 Rathdowne Street,Carlton North,Private Hospital,3,2,-37.920518,145.123346
+244,Vision Day Surgery Camberwell,NO,27 Denmark Hill Road,Hawthorn East,Day Procedure Centre,4,11,-37.83242449999999,145.0556221
+245,Vision Day Surgery Eastern,NO,852-856 Whitehorse Road,Box Hill,Day Procedure Centre,3,11,-37.8177488,145.1195096
+246,Vision Day Surgery Footscray,NO,89 Paisley Street,Footscray,Day Procedure Centre,0,0,-37.8006211,144.8950337
+247,Vision Laser St Kilda Road,NO,"Ground Floor, 600 St Kilda Rd",Melbourne,Day Procedure Centre,4,22,-37.8505237,144.9801545
+248,Wangaratta Private Hospital,NO,134-150 Templeton Street,Wangaratta,Private Hospital,4,14,-36.348895,146.312483
+249,Wantirna Health,NO,251 Mountain Highway,Wantirna,Public Hospital,3,27,-37.8483871,145.2259642
+250,Warringal Private Hospital,NO,216 Burgundy Street,Heidelberg,Private Hospital,3,127,-37.7550079,145.0605774
+251,Waverley Endoscopy Suites,NO,301 Blackburn Road,Mount Waverley,Day Procedure Centre,3,11,-37.8803252,145.1465139
+252,Waverley Private Hospital,NO,343-357 Blackburn Road,Mount Waverley,Private Hospital,3,137,-37.88436220000001,145.1456568
+253,Werribee Mercy Hospital,YES,300 Princes Highway,Werribee,Denominational Hospital,2,777,-37.8870779,144.698109
+254,West Gippsland Healthcare Group,YES,41 Landsborough Street,Warragul,Public Hospital,3,83,-38.172926,145.9278279
+255,West Wimmera Health Service,NO,49 Nelson Street,Nhill,Public Hospital,5,4,-36.3336581,141.6552913
+256,Western District Health Service,YES,20 Foster Street,Hamilton,Public Hospital,3,23,-37.7364326,142.0311416
+257,"Western District Health Service, Coleraine Campus",NO,71 McLeod Street,Coleraine,Public Hospital,0,0,-37.5996704,141.6920629
+258,Western Gastroenterology Services,NO,30 Eleanor Street,Footscray,Day Procedure Centre,3,11,-37.7919731,144.8851776
+259,Western Health,NO,160 Gordon Street,Footscray,Public Hospital,3,147,-37.7594951,144.8163234
+260,Western Health [Djerriwarrh Health Services],NO,Lot 4 Grant Street,Bacchus Marsh,Public Hospital,3,28,-37.67800099999999,144.434449
+261,Western Private Hospital,NO,1-9 Marion St ,Footscray,Private Hospital,4,30,-37.7931864,144.8858822
+262,Westpoint Endoscopy Day Hospital,NO,243 Heaths Road,Werribee,Day Procedure Centre,4,31,-37.8775521,144.6797656
+263,Williamstown Hospital,YES,77b Railway Crescent,Williamstown,Public Hospital,3,86,-37.8632855,144.8924946
+264,Windsor Private Hospital,NO,20 The Avenue,Windsor,Private Hospital,5,7,-37.8560026,144.9982332
+265,Yackandandah Bush Nursing Hospital Inc.,NO,20 Isaacs Avenue,Yackandandah,Bush Nursing Hospital,4,19,-36.3102276,146.8455479
+266,Yarra Ranges Health,NO,25 Market Street,Lilydale,Public Hospital,3,26,-37.7563083,145.3513958
+267,Yarram and District Health Service,NO,85 Commercial Road,Yarram,Public Hospital,3,9,-38.5570526,146.6783588
+268,Yarrawonga Health,NO,33 Piper Street,Yarrawonga,Public Hospital,3,5,-36.0117526,146.0065363
+269,Yea and District Memorial Hospital,NO,45 Station Street,Yea,Public Hospital,0,0,-37.2136445,145.4309026

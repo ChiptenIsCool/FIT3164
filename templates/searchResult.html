@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+
+<body class="suburbBody">
+    <div class="pages">
+        <div class="topnav">
+            <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+            <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+            <a  onclick="gotoSuburb()">Information For Suburb</a>
+            <a  onclick="gotoSearching()">Preferences Searching</a>
+            <a  onclick="gotoHome()">Home</a>
+        </div>
+        <div class="content">
+            <h1>Search Result</h1>
+
+            
+            <div>
+                <h2>
+                Campus:{{uni}} <br>
+                Max Distance: {{max_distance}} km <br>
+                Cinema: {{cinema}} <br>
+                Hospital: {{hospital}}<br>
+                Rent:{{rent}}
+                </h2>
+            </div>
+
+
+            
+            <div style="display: flex;">  
+                {% for user in your_list3 %} 
+                <div style="padding: 5px;">
+                    <div style="padding: 20px;width: 300px;border: 3px outset coral;">
+                        <div style="background-color:#e0b1a3;cursor: pointer;" onclick="gotoSearchOne('{{user[1]}}')"><div style="font-size: 30px;padding: 4px;">{{ user[1] }}</div></div>
+                        <div style="text-align:right; padding: 3px;" >Median Rent: A${{ user[2] }} </div>
+                        <div style="text-align:right; padding: 3px;">Closest Hospital: {{ user[3] }} km</div>
+                        <div style="text-align:right; padding: 3px;">Closest Cinema: {{ user[4] }} km</div>
+                        <div style="text-align:right; padding: 3px;">{{ user[0] }}</div>
+                    </div>
+                </div>
+                {% endfor %} 
+            </div> 
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <div style="display: flex;margin-left: 20px;">
+        <div style="color: forestgreen; padding: 50px;">
+            <h1> Cinema </h1>
+            <iframe src="/myproject/templates/vcinema.html" width = "700" height = "500" title="Distance to CBD from selected suburbs"></iframe>
+
+        </div>
+
+        <div style="color: forestgreen;padding: 50px;">
+            <h1> Level of crimes by offence divisions within suburbs </h1>
+            <iframe src="/myproject/templates/vcrime.html" width = "700" height = "500" title="Distance to CBD from selected suburbs"></iframe>
+
+        </div>
+    </div>
+
+    <div style="display: flex;margin-left: 20px;">
+        <div style="color: forestgreen;padding: 50px;">
+            <h1>Distance to CBD</h1>
+            <iframe src="/myproject/templates/vdistancetoCBD.html" width = "700" height = "500" title="Distance to CBD from selected suburbs"></iframe>
+    
+        </div>
+    
+        <div style="color: forestgreen;padding: 50px;">
+            <h1>Hospital</h1>
+            <iframe src="/myproject/templates/vhospital.html" width = "700" height = "500" title="Distance to CBD from selected suburbs"></iframe>
+    
+        </div>
+    </div>
+
+    
+    <div style="display: flex;margin-left: 20px;">
+        <div style="color: forestgreen;padding: 50px;">
+            <h1>Median Rent</h1>
+            <iframe src="/myproject/templates/vrent.html" width = "700" height = "500" title="Distance to CBD from selected suburbs"></iframe>
+
+        </div>
+    </div>
+
+
+</body>
+
+
+
+
+
+
+</html>
+<script>
+    function gotoSearchOne(x) {
+        window.location.href = './'+x;
+    }
+
+    function gotoCompare() {
+        window.location.href = './compare.html';
+    }
+
+    function gotoSuburb() {
+        window.location.href = './search_all';
+    }
+
+    function gotoSearching() {
+        window.location.href = './filter';
+    }
+
+    function gotoHome() {
+        window.location.href = './search';
+    }
+
+
+
+</script>

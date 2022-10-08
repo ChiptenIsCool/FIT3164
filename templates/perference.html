@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["uni"].value;
+            if (x == "Select") {
+                alert("Please Select a University");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+
+
+<body class="perferenceBody" onload="xx()">
+    <div class="pages">
+        <div class="topnav">
+            <b><img src="{{ url_for('static', filename='./images/logo2.png')}}" style="width:35px;height: 35px;margin-left: 5px; margin-top: 5px;" /></b>
+            <a class="where" style="color:#000000 ; text-align: left;pointer-events: none;">Where to Live</a>
+            <a  onclick="gotoSuburb()">Information For Suburb</a>
+            <a  onclick="gotoSearching()">Preferences Searching</a>
+            <a  onclick="gotoHome()">Home</a>
+        </div>
+
+
+        <div style="margin-top: 10px;margin-left: 20px;font-size:larger;color: #5a2514;font-family:'Times New Roman', Times, serif;">
+            <form name="myForm" action="{{ url_for("your_view")}}" onsubmit="return validateForm()" method="post" required>
+            <h2> Preferences Searching</h2>
+            <div>
+                <div style="margin-left:30px ;">
+                    <div style="margin-top:10px ;">
+
+
+                        <script>
+                            function xx() {
+                                var x = {{ list_of_uni| tojson}};            
+                                var opt = "<option value=\"Select\" >Select</option>";
+                                var stop = "";
+                                for (var i = 0; i < x.length; i++) {
+                                    opt += "<option value='" + x[i] + "'>" + x[i] + "</option>";
+            
+                                }
+
+                                document.getElementById('uni').innerHTML = opt;
+                            }
+            
+            
+                        </script>
+
+                        <div >Choose University</div>
+                        <select name="uni" id="uni" style="width: 500px;height: 22px;margin-top: 5px;width: 510px; height: 30px;">
+                        </select><br>
+                    </div>
+                    <div style="margin-top:10px ;">
+                        <div >Maximum Average Weekly Rent (150-500)</div>
+                        <input type="number" name="rent" placeholder="Maximum Rent Price" style="width: 500px;height: 22px;margin-top: 5px;" min="150" max="500" />
+                    </div>
+                    <div style="margin-top:10px ;">
+                        <div >Max Distance (1-100)</div>
+                        <input type="number" name="max_distance" placeholder="Maximum Distance" style="width: 500px;height: 22px;margin-top: 5px;" min="1" max="100" />
+                    </div>
+                    <div style="margin-top:10px ;">
+                        <div > Cinema(0 or 1)</div>
+                        <input type="number" name="cinema" placeholder="Include Cinema?" style="width: 500px;height: 22px;margin-top: 5px;" min="0" max="1" />
+                    </div>
+                    <div style="margin-top:10px ;">
+                        <div >Hospital(0 or 1)</div>
+                        <input type="number" name="hospital" placeholder="Include Hospital?" style="width: 500px;height: 22px;margin-top: 5px;" min="0" max="1"/>
+                    </div>
+                    <div style="margin-top:20px; width: 500px; ">
+                        <button type="submit" style="margin-left: 200px;width: 100px;height: 34px;background-color: #D38C76;cursor: pointer;">Search</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>              
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function gotoSuburb() {
+        window.location.href = './search_all';
+    }
+
+    function gotoSearching() {
+        window.location.href = './filter';
+    }
+
+    function gotoHome() {
+        window.location.href = './search';
+    }
+
+
+
+</script>
