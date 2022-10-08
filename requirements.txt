@@ -9,7 +9,7 @@ flask_googlemaps==0.4.1
 HTMLParser==0.0.2
 importlib_metadata==4.12.0
 ipaddr==2.2.0
-ipython==8.5.0
+ipython==7.34.0
 keyring==21.2.1
 lockfile==0.12.2
 lxml==4.5.2
