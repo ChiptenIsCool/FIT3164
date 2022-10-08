@@ -27,7 +27,6 @@ flask-wtf
 fsspec
 geopy
 gevent
-glob2
 gmaps
 gmpy2
 googlemaps
