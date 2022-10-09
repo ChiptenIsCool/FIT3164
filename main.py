@@ -13,7 +13,10 @@ import numpy as np
 from IPython.display import HTML
 import plotly.express as px
 import plotly.graph_objects as go
-import pandas
+import pandas as pd
+
+import os
+import shutil
 
 
 
@@ -36,7 +39,7 @@ for i in rows:
 GoogleMaps(app, key="AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg")
 
 
-@app.route("/")
+@app.route("/",methods =["GET", "POST"])
 @app.route("/search",methods =["GET", "POST"])
 def mapview1():
     
@@ -64,21 +67,10 @@ def mapview1():
 
 
 
-@app.route("/myproject/templates/vcinema.html")
-def vcinemaplot():
-    return render_template("vcinema.html")
-@app.route("/myproject/templates/vcrime.html")
-def vcrimeplot():
-    return render_template("vcrime.html")
-@app.route("/myproject/templates/vrent.html")
-def vrentplot():
-    return render_template("vrent.html")
-@app.route("/myproject/templates/vhospital.html")
-def vhospitalplot():
-    return render_template("vhospital.html")
-@app.route("/myproject/templates/vdistancetoCBD.html")
-def vdistanceplot():
-    return render_template("vdistancetoCBD.html")
+
+
+
+
 @app.route("/ad")
 def abd():
     return render_template("searchOne.html")
@@ -96,6 +88,7 @@ def your_view():
     con.row_factory = sql.Row
     cur = con.cursor()
 
+
     if request.method == "POST":
         counter = 0
         uni = request.form.get("uni")
@@ -103,6 +96,8 @@ def your_view():
         cinema = request.form.get("cinema")
         hospital = request.form.get("hospital")
         rent = request.form.get("rent")
+
+        print(max_distance,flush=True)
 
         if cinema == '1':
             cinema = '>= 1'
@@ -133,19 +128,6 @@ def your_view():
             t = i[0]
             your_list5.append(t)
 
-        '''
-        while_checker = True
-        while while_checker==True:
-            if len(your_list) >= 5:
-                break
-            rent = int(rent)+5
-        '''
-
-        print(rent, flush=True)
-        print(max_distance,flush=True)
-        print(cinema,flush=True)
-        print(hospital,flush=True)
-
         your_list3=[]
         your_list4=[]
 
@@ -164,6 +146,18 @@ def your_view():
                 rows = cur.fetchall(); 
                 for j in rows:
                     wsm_rent = j[0]
+
+                wsm_numberhospital = 'select "Number of Hospitals" from v3 where "Suburb/Town Name" = "'+for_temp[i]+'"'
+                cur.execute(wsm_numberhospital)
+                rows = cur.fetchall(); 
+                for j in rows:
+                    wsm_numberhospital = j[0]
+
+                wsm_numbercinemas = 'select "Number of Cinemas" from v3 where "Suburb/Town Name" = "'+for_temp[i]+'"'
+                cur.execute(wsm_numbercinemas)
+                rows = cur.fetchall(); 
+                for j in rows:
+                    wsm_numbercinemas = j[0]
 
 
                 
@@ -200,16 +194,21 @@ def your_view():
                 rows = cur.fetchall(); 
                 for j in rows:
                     wsm_crime = j[0]
+
+                wsm_population = 'select population from v3 where "Suburb/Town Name" = "'+for_temp[i]+'"'
+                cur.execute(wsm_population)
+                rows = cur.fetchall(); 
+                for j in rows:
+                    wsm_population = int(     str(j[0]).replace(",","")    )
                 
 
 
-                
-                calculate = -0.7*float(wsm_distancetouni)-0.1*float(wsm_closestcinema)-0.1*float(wsm_closesthospital)-0.1*float(wsm_distancetocbd)-0.2*float(wsm_crime)/10-float(wsm_rent)/10
+                calculate = -1.3*float(wsm_distancetouni)-0.1*float(wsm_closestcinema)-0.1*float(wsm_closesthospital)-0.1*float(wsm_distancetocbd)-5*(int(wsm_crime)/int(wsm_population))-float(wsm_rent)/10
                 #calculate = -0.7*float(wsm_distancetouni)-0.1*float(wsm_closestcinema)-0.1*float(wsm_closesthospital)-0.1*float(wsm_distancetocbd)-float(wsm_rent)/10
                 if k == 0:
-                    your_list3.append((calculate,for_temp[i],wsm_rent,round(wsm_closesthospital,2),round(wsm_closestcinema,2)))
+                    your_list3.append((round(100+calculate,2),for_temp[i],wsm_rent,round(wsm_closesthospital,2),round(wsm_closestcinema,2),wsm_numberhospital,wsm_numbercinemas,wsm_distancetouni))
                 if k == 1:
-                    your_list4.append((calculate,for_temp[i],wsm_rent,round(wsm_closesthospital,2),round(wsm_closestcinema,2)))
+                    your_list4.append((round(100+calculate,2),for_temp[i],wsm_rent,round(wsm_closesthospital,2),round(wsm_closestcinema,2),wsm_numberhospital,wsm_numbercinemas,wsm_distancetouni))
 
 
 
@@ -250,21 +249,30 @@ def your_view():
         
         for i in range(len(your_list)):
             your_list10.append(your_list[i][1])
-        print(your_list10,flush=True)
-        print(your_list10,flush=True)
-        print(your_list10,flush=True)
-        print(your_list10,flush=True)
-        print(your_list10,flush=True)
 
 
         ##################################################################################################
+
+        '''
         suburbs = your_list10
+
+        import os
+        if os.path.exists("templates/vhospital.html"):
+            os.remove("templates/vhospital.html")
+        if os.path.exists("templates/vcinema.html"):
+            os.remove("templates/vcinema.html")
+        if os.path.exists("templates/vdistancetoCBD.html"):
+            os.remove("templates/vdistancetoCBD.html")
+        if os.path.exists("templates/vrent.html"):
+            os.remove("templates/vrent.html")
+        if os.path.exists("templates/vcrime.html"):
+            os.remove("templates/vcrime.html")
+
+
+
         import pandas as pd
         distance = pd.read_csv('closest_distance.csv')
         rentx = pd.read_csv('rent_one_bedroom.csv')
-        hospitalx = pd.read_csv('hospital_latlong.csv')
-        rentx = pd.read_csv('rent_one_bedroom.csv')
-
         rentx['Count']=rentx['Count'].str.replace(',','')
 
         
@@ -283,39 +291,39 @@ def your_view():
         crime['Incidents_Recorded'] = crime['Incidents_Recorded'].str.replace(',','')
         crime['Incidents_Recorded'] = pd.to_numeric(crime['Incidents_Recorded']) 
 
-        #%matplotlib inline
+        fig = px.line(x=selected_dist['Suburb/Town Name'],y=selected_dist['Closest Hospital'],markers=True, labels={"x":"Suburb","y":"Shortest distance to hospital (km)"})
 
-
-        #can switch to horizontal if preferred
-        #fig = px.line(x=selected_dist['Suburb/Town Name'],y=selected_dist['Closest Hospital'],color=px.Constant("Shortest distance to hospital"),
-                    #labels=dict(x="Suburb/Town Name", y="Distance to hospital", color="Cinema info"))
-        #fig.add_bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Number of hospitals'],name="Number of hospitals")
-
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(x=selected_dist['Suburb/Town Name'],y=selected_dist['Closest Hospital']))
-        fig.add_trace(go.Bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Number of hospitals']))
-
-        fig.write_html("templates/vhospital.html",full_html=False,include_plotlyjs='cdn')
-
-            
+        fig.add_bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Number of hospitals']
+                , name="hospitals")
+        fig.update_layout(showlegend=False)
+        fig.write_html("templates/vhospital.html",full_html=False,include_plotlyjs='cdn')    
         
         fig1 = px.line(x=selected_dist['Suburb/Town Name'],y=selected_dist['Closest Cinema'],
-                    color=px.Constant("Shortest distance to cinema"),
-                    labels={"x":"Suburb","y":"Shortest distance to cinema"})
-        fig1.add_bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Number of cinemas'],name="Number of cinemas")
+                        markers=True,
+                    labels={"x":"Suburb","y":"Shortest distance to cinema (km)"})
+        fig1.add_bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Number of cinemas'],
+                    name="cinemas")
+        fig1.update_layout(showlegend=False)
         fig1.write_html("templates/vcinema.html",full_html=False,include_plotlyjs='cdn')
 
             
-        fig2 = px.bar(x=selected_dist['Suburb/Town Name'],y=selected_dist['Distance to CBD'],color=px.Constant("Distance to CBD"))
+        fig2 = px.bar(x=selected_dist['Distance to CBD'],y=selected_dist['Suburb/Town Name'], orientation="h",
+                    labels={"x":"Distance to CBD (km)","y":"Suburb"})
+        asdfgh=None
         fig2.write_html("templates/vdistancetoCBD.html",full_html=False,include_plotlyjs='cdn')
 
 
-        selected_rent["Count"] = selected_rent["Count"].astype(str)
+        selected_rent["Count"] = selected_rent["Count"].astype(str).replace(',','')
         selected_rent["Count"] = selected_rent["Count"].astype(float)
-        fig3 = px.scatter(selected_rent,x="Suburb", y="Median",color="Count",custom_data=["Count"])
+        fig3 = px.scatter(selected_rent,x="Suburb", y="Median",color="Count",custom_data=["Count"],
+                        labels={"x":"Suburb","y":"Median rent ($)","color":"Number of properties"})
+        fig3.update_traces(marker=dict(size=12,
+                                    line=dict(width=2,
+                                                color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
         fig3.update_traces(mode="markers",hovertemplate="<br>".join([
                 "Suburb: %{x}",
-                "Median price: %{y}",
+                "Median price: $%{y}",
                 "Number of property: %{customdata[0]}"
             ])
         )
@@ -324,18 +332,31 @@ def your_view():
         dfg = crime.query('(Suburb in @suburbs) and (Year==2022)')
         dfg_1 = dfg.groupby('Suburb').count().reset_index()
         dfg_1 = dfg_1.rename(columns={"Year":"Number of crime recorded"})
-        fig4 = px.bar(dfg_1,x="Suburb",y="Number of crime recorded",title='Number of crime in each suburb')
+        fig4 = px.bar(dfg_1,x="Number of crime recorded",y="Suburb", orientation="h",title='Number of crime in each suburb',
+                    labels={"x":"Suburb","y":"Number of crime records"})
         fig4.write_html("templates/vcrime.html",full_html=False, include_plotlyjs='cdn')
+
+        '''
+
+
+
+        
         ##################################################################################################
 
         import os
         import shutil
-            
 
 
-        print(your_list)
-        
-        return render_template('searchResult.html', your_list3=your_list,uni=uni, max_distance=max_distance, cinema = cinema, hospital = hospital, rent=rent)
+        if hospital=='>= 1':
+            hospital = 'include'
+        else:
+            hospital='exclude'
+        if cinema == '>= 1':
+            cinema = 'include'
+        else:
+            cinema = 'exclude'
+        print(your_list,flush=True)
+        return render_template('searchResult.html', your_list3=your_list,uni=uni, max_distance=max_distance, cinema = cinema, hospital=hospital, rent=rent)
 
 
     list_of_uni=[]
@@ -445,8 +466,174 @@ def mapview(suburb):
     con.row_factory = sql.Row
     cur = con.cursor()
 
+
+
+
+    generator = []
+    qwer = 'select "Suburb/Town Name" from v3'
+    cur.execute(qwer)
+    rows = cur.fetchall(); 
+    for i in rows:
+        generator.append(i[0])
+
+    
+
+
+
+
+
+    ################################################
+
+    '''
+
+    crime = pd.read_csv('Crime.csv')
+    crime.columns =[column.replace(" ", "_") for column in crime.columns]
+    crime['Incidents_Recorded'] = crime['Incidents_Recorded'].str.replace(',','')
+    crime['Incidents_Recorded'] = pd.to_numeric(crime['Incidents_Recorded']) 
+
+
+    chosen = suburb
+
+    #crime.columns.tolist()
+    dfg_chosen = pd.DataFrame(crime.loc[crime['Suburb']==chosen,crime.columns.tolist()]).reset_index(drop=True)
+    dfg_chosen = dfg_chosen[dfg_chosen['Year']==2022]
+    fig10 = px.sunburst(dfg_chosen, path=['Offence_Division', 'Offence_Subdivision', 'Offence_Subgroup'],values='Incidents_Recorded')
+
+    fig10.update_layout(margin=dict(l=20, r=20,  b=20))
+    fig10.update_traces(hovertemplate='Offence division: %{id} <br>Offence Subdivision: %{parent} <br>Offence Subgroup: %{label} <br>No of incidents: %{value}')
+    fig10.update_layout(
+        title="Incidents based on Offence Type in 2022",
+        legend_title="Legend Title",
+        font=dict(size=15)
+    )
+    
+    fig10.write_html("templates/vcrime_3.html",full_html=False, include_plotlyjs='cdn')
+
+
+    #line chart
+    crime_1 = crime.query("Suburb == \'"+suburb+"\'")
+    crime_11 = crime_1.groupby(['Year'])['Incidents_Recorded'].sum().reset_index()
+
+    fig8 = go.Figure()
+    fig8.add_trace(
+        go.Scatter(x=crime_11.Year, y=crime_11.Incidents_Recorded))
+
+    fig8.update_layout(
+        xaxis=dict(rangeselector=dict(buttons=list([
+                    dict(count=1,label="1y",step="year",stepmode="backward"),
+                    dict(count=6,label="6y",step="year",stepmode="backward"),
+                    dict(count=1,label="Now",step="year",stepmode="todate"),
+                    dict(count=10,label="10y",step="year",stepmode="backward"),
+                    dict(step="all")
+                ])),rangeslider=dict(visible=True),type="date"))
+
+    fig8.update_traces(hovertemplate="<br>".join(["Year: %{x}","Number of crime recorded: %{y}"]))
+    fig8.update_layout(
+        title="Total Incidents by Year",
+        legend_title="Legend Title",
+        font=dict(size=15)
+    )
+    fig8.write_html("templates/vcrime_1.html",full_html=False, include_plotlyjs='cdn')
+
+
+
+
+    #y values being too big, not too sure how to minimise them down!
+    crime_2 = crime_1.groupby(['Year','Offence_Division'])['Incidents_Recorded'].sum().reset_index()
+    fig8_1= px.bar(crime_2,x="Year",y="Incidents_Recorded",color="Offence_Division",
+                labels={"x":"Year","y":"Number of incidents records",
+            "Offence_Division": "Offence division"})
+    fig8_1.update_traces(hovertemplate="<br>".join([
+            "Year: %{x}",
+            "Number of crime records: %{y}"
+        ])
+    )
+    fig8_1.write_html("templates/vcrime_2.html",full_html=False, include_plotlyjs='cdn')
+    '''
+    ##################################################
+    
+    '''
+    crime = pd.read_csv('Crime.csv')
+    crime.columns =[column.replace(" ", "_") for column in crime.columns]
+    crime['Incidents_Recorded'] = crime['Incidents_Recorded'].str.replace(',','')
+    crime['Incidents_Recorded'] = pd.to_numeric(crime['Incidents_Recorded']) 
+    #Sunburs chart
+    for i in range(len(generator)):
+        chosen = generator[i]
+        chosen1 = generator[i].replace(" ","_")
+
+        #crime.columns.tolist()
+        dfg_chosen = pd.DataFrame(crime.loc[crime['Suburb']==chosen,crime.columns.tolist()]).reset_index(drop=True)
+        dfg_chosen = dfg_chosen[dfg_chosen['Year']==2022]
+        fig10 = px.sunburst(dfg_chosen, path=['Offence_Division', 'Offence_Subdivision', 'Offence_Subgroup'],values='Incidents_Recorded')
+
+        fig10.update_layout(margin=dict(l=20, r=20,  b=20))
+        fig10.update_traces(hovertemplate='Offence division: %{id} <br>Offence Subdivision: %{parent} <br>Offence Subgroup: %{label} <br>No of incidents: %{value}')
+        fig10.update_layout(
+            title="Incidents based on Offence Type in 2022",
+            legend_title="Legend Title",
+            font=dict(size=15)
+        )
+        fig10.write_html("templates/vizu/"+chosen1+"_vcrime_3.html",full_html=False, include_plotlyjs='cdn')
+
+
+        #line chart
+        crime_1 = crime.query("Suburb == \'"+suburb+"\'")
+        crime_11 = crime_1.groupby(['Year'])['Incidents_Recorded'].sum().reset_index()
+
+        fig8 = go.Figure()
+        fig8.add_trace(
+            go.Scatter(x=crime_11.Year, y=crime_11.Incidents_Recorded))
+
+        fig8.update_layout(
+            xaxis=dict(rangeselector=dict(buttons=list([
+                        dict(count=1,label="1y",step="year",stepmode="backward"),
+                        dict(count=6,label="6y",step="year",stepmode="backward"),
+                        dict(count=1,label="Now",step="year",stepmode="todate"),
+                        dict(count=10,label="10y",step="year",stepmode="backward"),
+                        dict(step="all")
+                    ])),rangeslider=dict(visible=True),type="date"))
+
+        fig8.update_traces(hovertemplate="<br>".join(["Year: %{x}","Number of crime recorded: %{y}"]))
+        fig8.update_layout(
+            title="Total Incidents by Year",
+            legend_title="Legend Title",
+            font=dict(size=15)
+        )
+        fig8.write_html("templates/vizu/"+chosen1+"_vcrime_1.html",full_html=False, include_plotlyjs='cdn')
+
+
+
+
+        #y values being too big, not too sure how to minimise them down!
+        crime_2 = crime_1.groupby(['Year','Offence_Division'])['Incidents_Recorded'].sum().reset_index()
+        fig8_1= px.bar(crime_2,x="Year",y="Incidents_Recorded",color="Offence_Division",
+                    labels={"x":"Year","y":"Number of incidents records",
+                "Offence_Division": "Offence division"})
+        fig8_1.update_traces(hovertemplate="<br>".join([
+                "Year: %{x}",
+                "Number of crime records: %{y}"
+            ])
+        )
+        fig8_1.update_layout(
+            title="Annual Incidents based on Offence Division from 2013",
+            legend_title="Legend Title",
+            font=dict(size=15)
+        )
+        fig8_1.write_html("templates/vizu/"+chosen1+"_vcrime_2.html",full_html=False, include_plotlyjs='cdn')
+
+    '''
+        
+    ###################################################
+
+
+
+
+
+
+
+
     #Checking if suburb exists
-    print(suburb, flush=True)
     checker = 'select "Suburb/Town Name" from v3 where "Suburb/Town Name" = "'+suburb+'"'
     cur.execute(checker)
     rows = cur.fetchall(); 
@@ -537,8 +724,6 @@ def mapview(suburb):
         ######## JOURNEY PLANNER
         url = "https://maps.googleapis.com/maps/api/directions/json?origin="+suburb+"%2CVIC&destination="+uni+"&mode=transit&departure_time="+departuretime+"&key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
         dist3 = requests.get(url).json()
-
-        print(url,flush=True)
         
         
         dur3_value = dist3['routes'][0]['legs'][0]['duration']['value']
@@ -584,24 +769,23 @@ def mapview(suburb):
             change_count = 0
 
 
-        print(stop_list, flush=True)
 
 
 
 
 
+        suburb_underline = suburb.replace(' ','_')
 
-
-
-        return render_template('searchOne.html', dest_uni=dest_uni,dist_to_closest_cinema=dist_to_closest_cinema,dist_to_closest_hospital=dist_to_closest_hospital,list_of_uni=list_of_uni,restaurant_list=restaurant_list,change_count=change_count,dep3=dep3,arr3=arr3,departuretime=departuretime,currtime = currtime, show=show, your_list=your_list, dur3=dur3, suburb_coor=suburb_coor, your_list2=your_list2, dist_to_cbd=dist_to_cbd,dist3=dist3,suburb=suburb,stop_list=stop_list)
+        return render_template('searchOne.html', suburb_underline=suburb_underline,dest_uni=dest_uni,dist_to_closest_cinema=dist_to_closest_cinema,dist_to_closest_hospital=dist_to_closest_hospital,list_of_uni=list_of_uni,restaurant_list=restaurant_list,change_count=change_count,dep3=dep3,arr3=arr3,departuretime=departuretime,currtime = currtime, show=show, your_list=your_list, dur3=dur3, suburb_coor=suburb_coor, your_list2=your_list2, dist_to_cbd=dist_to_cbd,dist3=dist3,suburb=suburb,stop_list=stop_list)
 
     else:
+        suburb_underline = suburb.replace(' ','_')
 
 
         
 
 
-        return render_template('searchOne.html', dist_to_closest_cinema=dist_to_closest_cinema,dist_to_closest_hospital=dist_to_closest_hospital,list_of_uni=list_of_uni,restaurant_list=restaurant_list,currtime=currtime,show=show, your_list=your_list, dur3 = dur3,suburb_coor=suburb_coor, your_list2=your_list2, dist_to_cbd=dist_to_cbd,suburb=suburb,stop_list=stop_list)
+        return render_template('searchOne.html', suburb_underline=suburb_underline,dist_to_closest_cinema=dist_to_closest_cinema,dist_to_closest_hospital=dist_to_closest_hospital,list_of_uni=list_of_uni,restaurant_list=restaurant_list,currtime=currtime,show=show, your_list=your_list, dur3 = dur3,suburb_coor=suburb_coor, your_list2=your_list2, dist_to_cbd=dist_to_cbd,suburb=suburb,stop_list=stop_list)
 
 
 
@@ -614,6 +798,38 @@ def mapview(suburb):
 
     return render_template('v2.html', your_list=your_list)
  '''   
+
+'''
+@app.route("/myproject/templates/vcinema.html")
+def vcinemaplot():
+    return render_template("vcinema.html",data='x')
+@app.route("/myproject/templates/vcrime.html")
+def vcrimeplot():
+    return render_template("vcrime.html",data='x')
+@app.route("/myproject/templates/vrent.html")
+def vrentplot():
+    return render_template("vrent.html",data='x')
+@app.route("/myproject/templates/vhospital.html")
+def vhospitalplot():
+    return render_template("vhospital.html",data='x')
+@app.route("/myproject/templates/vdistancetoCBD.html")
+def vdistanceplot():
+    return render_template("vdistancetoCBD.html",data='x')
+'''
+@app.route("/myproject/templates/vizu/<suburb>_vcrime_1.html")
+def vcrime1plot(suburb):
+    return render_template("vizu/"+suburb+"_vcrime_1.html",data='x')
+
+
+@app.route("/myproject/templates/vizu/<suburb>_vcrime_2.html")
+def vcrime2plot(suburb):
+    return render_template("vizu/"+suburb+"_vcrime_2.html",data='x')
+
+
+@app.route("/myproject/templates/vizu/<suburb>_vcrime_3.html")
+def vcrime3plot(suburb):
+    return render_template("vizu/"+suburb+"_vcrime_3.html",data='x')
+
 if __name__ == '__main__':
    #app.run(debug = True)
    def generate_html(dataframe: pd.DataFrame):
