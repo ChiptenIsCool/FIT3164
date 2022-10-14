@@ -99,15 +99,15 @@ def your_view():
 
         print(max_distance,flush=True)
 
-        if cinema == '1':
+        if cinema.lower() == 'yes':
             cinema = '>= 1'
-        elif cinema == '0':
+        elif cinema.lower() == 'no':
             cinema = '<= 99'
 
-        if hospital == '1':
+        if hospital.lower() == 'yes':
             hospital = '>= 1'
 
-        elif hospital == '0':
+        elif hospital.lower() == 'no':
             hospital = '<= 99'
 
         #based on user filter
@@ -830,6 +830,9 @@ def vcrime2plot(suburb):
 def vcrime3plot(suburb):
     return render_template("vizu/"+suburb+"_vcrime_3.html",data='x')
 
+@app.route("/myproject/templates/rent_vic.html")
+def rent_all():
+    return render_template("rent_vic.html")
 if __name__ == '__main__':
    #app.run(debug = True)
    def generate_html(dataframe: pd.DataFrame):
@@ -859,4 +862,5 @@ if __name__ == '__main__':
     """
     # return the html
     return html
+   
    
