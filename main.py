@@ -14,7 +14,7 @@ from IPython.display import HTML
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
-
+import pytz
 import os
 import shutil
 
@@ -684,7 +684,7 @@ def mapview(suburb):
         dist_to_closest_cinema = round(i[2],2)
         dist_to_closest_hospital = round(i[1],2)
 
-    currtime = datetime.now().strftime("%Y-%m-%dT%H:%M")
+    currtime = datetime.now(pytz.timezone("Australia/Victoria")).strftime("%Y-%m-%dT%H:%M")
 
     latlng = 'select lat,lng from v3 where "Suburb/Town Name" = "'+suburb+'"'
     cur.execute(latlng)
