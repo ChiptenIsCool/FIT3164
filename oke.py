@@ -14,7 +14,7 @@ from IPython.display import HTML
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
-
+import pytz
 import os
 import shutil
 
@@ -22,18 +22,7 @@ import shutil
 
 
 app = Flask(__name__)
-'''
-con = sql.connect("site.db")
-con.row_factory = sql.Row
 
-cur = con.cursor()
-cur.execute('select * from v1 where "University of Divinity" <= "10"')
-   
-rows = cur.fetchall(); 
-
-for i in rows:
-    print(i[1])
-'''
 #app.config['GOOGLEMAPS_KEY'] = "AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
 #GoogleMaps(app)
 GoogleMaps(app, key="AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg")
@@ -51,8 +40,6 @@ def mapview1():
     if request.method == "POST":
         list_sub = []
         suburb = request.form["suburb"]
-
-        #show1='select "Suburb/Town Name",Postcode from v3 where "Suburb/Town Name" = "'+suburb+'"'
         show1='select "Suburb/Town Name",Postcode,"Median Rent","Number of Hospitals", "Number of Cinemas" from v3 where "Suburb/Town Name" like "%'+suburb+'%"'
         cur.execute(show1)
         rows = cur.fetchall(); 
@@ -342,10 +329,6 @@ def your_view():
 
         
         ##################################################################################################
-
-        import os
-        import shutil
-
 
         if hospital=='>= 1':
             hospital = 'include'
