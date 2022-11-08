@@ -19,7 +19,8 @@ import os
 import shutil
 
 
-
+#Fill your API key here with places, maps, and directions API activated
+google_api_private_key = ""
 
 app = Flask(__name__)
 '''
@@ -34,9 +35,9 @@ rows = cur.fetchall();
 for i in rows:
     print(i[1])
 '''
-#app.config['GOOGLEMAPS_KEY'] = "AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+
 #GoogleMaps(app)
-GoogleMaps(app, key="AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg")
+GoogleMaps(app, key=google_api_private_key)
 
 
 @app.route("/",methods =["GET", "POST"])
@@ -694,7 +695,7 @@ def mapview(suburb):
 
 
     restaurant_list=[]
-    url33="https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=restaurant&location="+latlng[0]+"%2C"+latlng[1]+"&radius=1500&type=restaurant&key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+    url33="https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=restaurant&location="+latlng[0]+"%2C"+latlng[1]+"&radius=1500&type=restaurant&key="+google_api_private_key
     url33 = requests.get(url33).json()
     for i in range(len(url33['results'])):
         restaurant_list.append([
@@ -722,7 +723,7 @@ def mapview(suburb):
 
 
         ######## JOURNEY PLANNER
-        url = "https://maps.googleapis.com/maps/api/directions/json?origin="+suburb+"%2CVIC&destination="+uni+"&mode=transit&departure_time="+departuretime+"&key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+        url = "https://maps.googleapis.com/maps/api/directions/json?origin="+suburb+"%2CVIC&destination="+uni+"&mode=transit&departure_time="+departuretime+"&key="+google_api_private_key
         dist3 = requests.get(url).json()
         
         
