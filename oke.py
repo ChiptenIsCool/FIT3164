@@ -19,13 +19,25 @@ import os
 import shutil
 
 
-
+#Fill your API key here with places, maps, and directions API activated
+google_api_private_key = ""
 
 app = Flask(__name__)
+'''
+con = sql.connect("site.db")
+con.row_factory = sql.Row
 
-#app.config['GOOGLEMAPS_KEY'] = "AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+cur = con.cursor()
+cur.execute('select * from v1 where "University of Divinity" <= "10"')
+   
+rows = cur.fetchall(); 
+
+for i in rows:
+    print(i[1])
+'''
+
 #GoogleMaps(app)
-GoogleMaps(app, key="AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg")
+GoogleMaps(app, key=google_api_private_key)
 
 
 @app.route("/",methods =["GET", "POST"])
@@ -40,6 +52,8 @@ def mapview1():
     if request.method == "POST":
         list_sub = []
         suburb = request.form["suburb"]
+
+        #show1='select "Suburb/Town Name",Postcode from v3 where "Suburb/Town Name" = "'+suburb+'"'
         show1='select "Suburb/Town Name",Postcode,"Median Rent","Number of Hospitals", "Number of Cinemas" from v3 where "Suburb/Town Name" like "%'+suburb+'%"'
         cur.execute(show1)
         rows = cur.fetchall(); 
@@ -329,6 +343,10 @@ def your_view():
 
         
         ##################################################################################################
+
+        import os
+        import shutil
+
 
         if hospital=='>= 1':
             hospital = 'include'
@@ -677,7 +695,7 @@ def mapview(suburb):
 
 
     restaurant_list=[]
-    url33="https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=restaurant&location="+latlng[0]+"%2C"+latlng[1]+"&radius=1500&type=restaurant&key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+    url33="https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=restaurant&location="+latlng[0]+"%2C"+latlng[1]+"&radius=1500&type=restaurant&key="+google_api_private_key
     url33 = requests.get(url33).json()
     for i in range(len(url33['results'])):
         restaurant_list.append([
@@ -705,7 +723,7 @@ def mapview(suburb):
 
 
         ######## JOURNEY PLANNER
-        url = "https://maps.googleapis.com/maps/api/directions/json?origin="+suburb+"%2CVIC&destination="+uni+"&mode=transit&departure_time="+departuretime+"&key=AIzaSyBYkIz-pqehbEloeqad8C-JSvTgLruFdBg"
+        url = "https://maps.googleapis.com/maps/api/directions/json?origin="+suburb+"%2CVIC&destination="+uni+"&mode=transit&departure_time="+departuretime+"&key="+google_api_private_key
         dist3 = requests.get(url).json()
         
         
