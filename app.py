@@ -27,6 +27,7 @@ app = Flask(__name__)
 con = sql.connect("site.db")
 con.row_factory = sql.Row
 
+
 cur = con.cursor()
 cur.execute('select * from v1 where "University of Divinity" <= "10"')
    
